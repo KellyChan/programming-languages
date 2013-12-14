@@ -24,7 +24,7 @@ def simplify(s):
     if test(s1) == "FAIL":
         return simplify(s1)
     # YOUR CODE HERE
-    elif test(s2) == "FAIL":
+    if test(s2) == "FAIL":
         return simplify(s2)
     
     return s
