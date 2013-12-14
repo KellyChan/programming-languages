@@ -5,9 +5,9 @@
 
 class Time:
     def __init__(self, h = 0, m = 0, s = 0):
-        assert 0 <= h <= 23
-        assert 0 <= m <= 59
-        assert 0 <= s <= 60
+        assert 0 <= int(h) <= 23
+        assert 0 <= int(m) <= 59
+        assert 0 <= int(s) <= 60
         
         self._hours   = int(h)
         self._minutes = int(m)
