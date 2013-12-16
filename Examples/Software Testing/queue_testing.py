@@ -83,7 +83,24 @@ def test1():
 
 def test2():
     ###Your code here.
-    pass
+    q = Queue(2)
+    res = q.empty()
+    if not res:
+        print "test2 NOT OK"
+        return
+    res = q.enqueue(1)
+    if not res:
+        print "test2 NOT OK"
+        return
+    res = q.enqueue(2)
+    if not res:
+        print "test2 NOT OK"
+        return
+    x = q.dequeue(3)
+    if q.tail != 0:
+        print "test2 NOT OK"
+        return
+    print "test2 OK"
 
 def test3():
     ###Your code here.
