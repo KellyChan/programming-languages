@@ -13,7 +13,7 @@ def remove_html_markup(s):
             tag = True
         elif c == '>' and not quote:
             tag = False
-        elif c == '"' and tag:
+        elif (c == '"' or c == "'") and tag and not quote:
             quote = not quote
         elif not tag:
             out = out + c
