@@ -96,7 +96,7 @@ def test2():
     if not res:
         print "test2 NOT OK"
         return
-    x = q.dequeue(3)
+    x = q.dequeue()
     if q.tail != 0:
         print "test2 NOT OK"
         return
@@ -113,7 +113,7 @@ def test3():
     if not x is None:
         print "test3 NOT OK"
         return
-    res = q.dequeue(3)
+    res = q.dequeue()
     if not res:
         print "test3 NOT ok"
         return
