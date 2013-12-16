@@ -104,7 +104,24 @@ def test2():
 
 def test3():
     ###Your code here.
-    pass
+    q = Queue(1)
+    res = q.empty()
+    if not res:
+        print "test3 NOT OK"
+        return
+    x = q.dequeue()
+    if not x is None:
+        print "test3 NOT OK"
+        return
+    res = q.dequeue(3)
+    if not res:
+        print "test3 NOT ok"
+        return
+    x = q.dequeue()
+    if x != 1 or q.head != 0:
+        print "test3 NOT ok"
+        return
+    print "test3 OK"
     
 test1()
 test2()
