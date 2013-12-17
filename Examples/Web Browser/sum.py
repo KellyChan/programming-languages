@@ -20,7 +20,6 @@ def sumnums(sentence):
     for integer in integers:
         integer = int(integer)
         sum += integer
-        
     return sum
          
 
