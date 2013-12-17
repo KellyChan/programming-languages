@@ -18,8 +18,7 @@ def sumnums(sentence):
     sum = 0
     integers = re.findall(r'[0-9]+',sentence)
     for integer in integers:
-        integer = int(integer)
-        sum += integer
+        sum += int(integer)
     return sum
          
 
