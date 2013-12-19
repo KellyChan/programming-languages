@@ -18,6 +18,13 @@ def reductions(chart, i, x, ab, cd, j):
     return ret
      
     
-chart = {0: [('exp', ['exp'], ['+', 'exp'], 0), ('exp', [], ['num'], 0), ('exp', [], ['(', 'exp', ')'], 0), ('exp', [], ['exp', '-', 'exp'], 0), ('exp', [], ['exp', '+', 'exp'], 0)], 1: [('exp', ['exp', '+'], ['exp'], 0)], 2: [('exp', ['exp', '+', 'exp'], [], 0)]}
+chart = {0: [('exp', ['exp'], ['+', 'exp'], 0), 
+             ('exp', [], ['num'], 0), 
+             ('exp', [], ['(', 'exp', ')'], 0), 
+             ('exp', [], ['exp', '-', 'exp'], 0), 
+             ('exp', [], ['exp', '+', 'exp'], 0)], 
+         1: [('exp', ['exp', '+'], ['exp'], 0)], 
+         2: [('exp', ['exp', '+', 'exp'], [], 0)]}
 
-print reductions(chart,2,'exp',['exp','+','exp'],[],0) == [('exp', ['exp'], ['-', 'exp'], 0), ('exp', ['exp'], ['+', 'exp'], 0)]
+print reductions(chart,2,'exp',['exp','+','exp'],[],0) == [('exp', ['exp'], ['-', 'exp'], 0), 
+                                                           ('exp', ['exp'], ['+', 'exp'], 0)]
