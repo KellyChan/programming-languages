@@ -26,6 +26,7 @@ def test():
     # fh playing against fh returns fh.
     assert poker([fk, fh]) == fk
     assert poker([fh, fh]) == fh
+    return "tests pass"
     
     
 print test()
