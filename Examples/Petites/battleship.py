@@ -29,6 +29,9 @@ print ship_col
 if (ship_row == guess_row and ship_col == guess_col):
     print "Congratulations! You sank my battleship!"
 else:
-    print 'You missed my battleship!'
-    board[guess_row][guess_col] = 'X'
-    print board[guess_row-1][guess_col-1]
+    if (guess_row > ship_row or guess_col > ship_col):
+        print "Oops, that's not even in the ocean."
+    else:
+        print 'You missed my battleship!'
+        board[guess_row][guess_col] = 'X'
+        print_board(board)
