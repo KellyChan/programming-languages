@@ -7,6 +7,27 @@ Book: Machine Learning In Action
 ------------------------------------------------------
 '''
 
+'''
+
+Function Tree
+
+- classifier
+   |
+- tree
+   |---- majorityLabel
+   |---- dataReduction
+   |---- featureChoice
+   |          |---------- shannonEntropy
+   |          |---------- dataReduction
+   |
+   |
+- treeLeaves
+- treeDepth
+- treeSave
+- treeLoad
+
+'''
+
 
 from math import log
 import operator
@@ -105,25 +126,111 @@ def tree(dataSet, featureNames, categoryIndex):
     bestFeatureValues = set(bestFeature)
 
     # (treeOutput) constructing tree by recursion
-    treeOutput = {bestFeatureName: {}}
+    treeCreated = {bestFeatureName: {}}
     for bestFeatureValue in bestFeatureValues:
         subFeatureNames = featureNames[:]
-        treeOutput[bestFeatureName][bestFeatureValue] = tree(dataReduction(dataSet, bestFeatureIndex, bestFeatureValue), 
-                                                             subFeatureNames, 
-                                                             categoryIndex)
-    return treeOutput
+        treeCreated[bestFeatureName][bestFeatureValue] = tree(dataReduction(dataSet, bestFeatureIndex, bestFeatureValue), 
+                                                              subFeatureNames, 
+                                                              categoryIndex)
+    return treeCreated
 
 
+# treeLeaves
+# return # of leaves from treeCreated
+def treeLeaves(treeCreated):
+    leaves = 0
+    root = treeCreated.keys()[0]
+    nodes = treeCreated[root]
+    for key in nodes.keys():
+        if type(nodes[key]).__name__ == 'dict':
+            leaves += treeLeaves(nodes[key])
+        else:
+            leaves += 1
+    return leaves
 
+
+# treeDepth
+# return the depth of treeCreated
+def treeDepth(treeCreated):
+    depth = 0
+    root = treeCreated.keys()[0]
+    nodes = treeCreated[root]
+    for key in nodes.keys():
+        if type(nodes[key]).__name__ =='dict':
+            thisDepth = 1 + treeDepth(nodes[key])
+        else:
+            thisDepth = 1
+        if thisDepth > depth:
+            depth = thisDepth
+    return depth
+
+
+# treeSave
+# save treeCreated to a file
+def treeSave(treeCreated, filename):
+    import pickle
+    treeFile = open(filename,'w')
+    pickle.dump(treeCreated, treeFile)
+    treeFile.close()
+
+# treeLoad
+# return treeCreated from a treeFile
+def treeLoad(filename):
+    import pickle
+    treeFile = open(filename)
+    return pickle.load(treeFile)
+
+
+# classifier
+# return category of testX by training treeCreated
+def classifier(treeCreated, featureNames, testX):
+    root = treeCreated.keys()[0]
+    nodes = treeCreated[root]
+    # get index of root in featureNames
+    featureIndex = featureNames.index(root)
+    for key in nodes.keys():
+        if testX[featureIndex] == key:
+            if type(nodes[key]).__name__ == 'dict':
+                category = classifier(nodes[key], featureNames, testX)
+            else:
+                category = nodes[key]
+    return category
+    
+
+
+#--------------------------------------------------
+# tree (training)
+
+featureNames = ['no surfacing','flippers']
 
 dataSet = [[1, 1, 'yes'],
            [1, 1, 'yes'],
            [1, 0, 'no'],
            [0, 1, 'no'],
            [0, 1, 'no']]
-featureNames = ['no surfacing','flippers']
+
 
 #print shannonEntropy(dataSet, -1)
 #print dataReduction(dataSet, 1,1)
 #print featureChoice(dataSet, -1)
-print tree(dataSet, featureNames, -1)
+treeCreated = tree(dataSet, featureNames, -1)
+print treeCreated
+print treeLeaves(treeCreated)
+print treeDepth(treeCreated)
+
+
+#--------------------------------------------------
+# tree (testing)
+
+featureNames = ['no surfacing','flippers']
+
+dataTest = [[1, 0],
+            [1, 0],
+            [1, 1],
+            [1, 1],
+            [0, 1]]
+
+for i in range(len(dataTest)):
+    print classifier(treeCreated, featureNames, dataTest[i])
+
+
