@@ -79,12 +79,13 @@ def naiveBayes(checkWordsMatrix, categories):
             totalFalse += sum(checkWordsMatrix[i])
 
     probabilityCategory = sum(categories) / float(rows)
-    vectorProbabilityTrue = vectorTrue / totalTrue # conditional probability
-    vectorProbabilityFalse = vectorFalse / totalFalse # conditional probability
+    vectorProbabilityTrue = vectorTrue / totalTrue # change to log
+    vectorProbabilityFalse = vectorFalse / totalFalse # change to log
     return probabilityCategory, vectorProbabilityTrue, vectorProbabilityFalse
 
 
-
+# classifier
+# return category by comparing probability
 # ln f(x) ~ f(x): 
 # whatever x, trends increased and decreased are the same for lnf(x) and f(x).
 # ln(a*b) = lna + lnb: 
