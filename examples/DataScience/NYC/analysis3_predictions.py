@@ -38,10 +38,14 @@ def gradient_descent(features, values, theta, alpha, num_iterations):
 
     for i in range(num_iterations):
         # your code here
+        # Calculate cost
         cost = compute_cost(features, values, theta)
+        
+        # Append cost to history
         cost_history.append(cost)
-        theta = theta - alpha * (1/m) * np.dot((np.dot(features,theta) - values),features)
-
+        
+        # Calculate new theta
+        theta = theta + (alpha / m) * np.dot((values - np.dot(features,theta)),features)
     return theta, pandas.Series(cost_history)
 
 def predictions(dataframe):
@@ -79,14 +83,14 @@ def predictions(dataframe):
     values_array = np.array(values).flatten()
 
     #Set values for alpha, number of iterations.
-    alpha = 0.01 # please feel free to play with this value
-    num_iterations = 90 # please feel free to play with this value
+    alpha = 0.1 # please feel free to play with this value
+    num_iterations = 75 # please feel free to play with this value
 
     #Initialize theta, perform gradient descent
     theta_gradient_descent = np.zeros(len(features.columns))
     theta_gradient_descent, cost_history = gradient_descent(features_array, values_array, theta_gradient_descent,
                                                             alpha, num_iterations)
+    #print cost_history
+    prediction = np.dot(features_array, theta_gradient_descent)
 
-    predictions = np.dot(features_array, theta_gradient_descent)
-
-    return predictions
+    return prediction
