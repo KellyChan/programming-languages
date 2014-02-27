@@ -33,6 +33,6 @@ def gradient_descent(features, values, theta, alpha, num_iterations):
         cost_history.append(cost)
         
         # Calculate new theta
-        theta = theta - alpha * (1/m) * numpy.dot((numpy.dot(features,theta) - values),features)
+        theta = theta - (alpha/m) * numpy.dot((numpy.dot(features,theta) - values),features)
 
     return theta, pandas.Series(cost_history)
