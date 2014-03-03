@@ -38,22 +38,60 @@ def pretty_print(data, indent=4):
 
 
 def main():
-    results = query_by_name(ARTIST_URL, query_type["simple"], "Nirvana")
-    pretty_print(results)
+    results = query_by_name(ARTIST_URL, query_type["simple"], "First Aid Kit")
+    #pretty_print(results)
 
     artist_id = results["artist"][1]["id"]
-    print "\nARTIST:"
-    pretty_print(results["artist"][1])
+    #print "\nARTIST:"
+    #pretty_print(results["artist"][1])
 
     artist_data = query_site(ARTIST_URL, query_type["releases"], artist_id)
     releases = artist_data["releases"]
-    print "\nONE RELEASE:"
-    pretty_print(releases[0], indent=2)
-    release_titles = [r["title"] for r in releases]
+    #print "\nONE RELEASE:"
+    #pretty_print(releases[0], indent=2)
+    #release_titles = [r["title"] for r in releases]
 
-    print "\nALL TITLES:"
-    for t in release_titles:
-        print t
+    #print "\nALL TITLES:"
+    #for t in release_titles:
+    #    print t
+
+
+    results = query_by_name(ARTIST_URL, query_type["simple"], "FIRST AID KIT")
+    #pretty_print(results)
+    counter = 0
+    for artist in results['artist']:
+        if artist['score'] == "100":
+            counter += 1
+    print "\n# of FIRST AID KIT:"
+    print counter
+
+    results = query_by_name(ARTIST_URL, query_type["simple"], "Queen")
+    #pretty_print(results)
+    begin_area = results['artist'][0]['begin-area']['name']
+    print "\nbegin-area named for 'Queen':"
+    print begin_area
+
+    results = query_by_name(ARTIST_URL, query_type["simple"], "Beatles")
+    #pretty_print(results)
+    aliases = results['artist'][0]['aliases']
+    for alias in aliases:
+        if alias['locale'] == 'es':
+            alias_name = alias['name']
+    print "\nSpanish alise for Beatles:"
+    print alias_name
+
+
+    results = query_by_name(ARTIST_URL, query_type["simple"], "Nirvana")
+    disambiguation = results['artist'][0]['disambiguation']
+    print "\nNirvana Disambiguation:"
+    print disambiguation
+
+
+    results = query_by_name(ARTIST_URL, query_type["simple"], "One Direction")
+    begin_date = results['artist'][0]['life-span']['begin']
+    print "\nWhen was 'One Direction' formed:"
+    print begin_date
+
 
 
 if __name__ == '__main__':
