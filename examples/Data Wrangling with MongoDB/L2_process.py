@@ -57,8 +57,8 @@ def process_file(f):
             else:
                 year = int(cols[0].string.strip())
                 month = int(cols[1].string.strip())
-                domestic = cols[2].string.strip()
-                international = cols[3].string.strip()
+                domestic = int(cols[2].string.strip().replace(',', ''))
+                international = int(cols[3].string.strip().replace(',',''))
             
  
             record = {
@@ -72,7 +72,7 @@ def process_file(f):
                             }
             }
             records.append(record)
-    data.append([records])    
+    data.append(records)    
     return data
 
 
@@ -84,12 +84,12 @@ def test():
     for f in files:
         data += process_file(f)
     assert len(data) == 3
-    #for entry in data[:3]:
-        #print entry
-        #assert type(entry["year"]) == int
-        #assert type(entry["flights"]["domestic"]) == int
-        #assert len(entry["airport"]) == 3
-        #assert len(entry["courier"]) == 2
+    for entry in data[:3]:
+        for record in entry:
+            assert type(record["year"]) == int
+            assert type(record["flights"]["domestic"]) == int
+            assert len(record["airport"]) == 3
+            assert len(record["courier"]) == 2
     print "... success!"
 
 if __name__ == "__main__":
