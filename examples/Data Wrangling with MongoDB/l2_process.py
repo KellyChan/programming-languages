@@ -71,8 +71,6 @@ def process_file(f):
                             }
             }
             data.append(record)
- 
-    return data
 
     return data
 
