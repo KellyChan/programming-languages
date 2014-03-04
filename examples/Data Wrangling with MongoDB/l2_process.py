@@ -44,11 +44,10 @@ def process_file(f):
     info["courier"], info["airport"] = f[:6].split("-")
     
     with open("{}/{}".format(datadir, f), "r") as html:
-       
+
         soup = BeautifulSoup(html)
         dataTDRight = soup.find("table", {"class" : "dataTDRight"})
         
-        records = []
         for row in dataTDRight.findAll('tr'):
             cols = row.findAll('td')
             
@@ -71,8 +70,10 @@ def process_file(f):
                                "international": international
                             }
             }
-            records.append(record)
-    data.append(records)    
+            data.append(record)
+ 
+    return data
+
     return data
 
 
@@ -83,13 +84,12 @@ def test():
     data = []
     for f in files:
         data += process_file(f)
-    assert len(data) == 3
+    assert len(data) == 399
     for entry in data[:3]:
-        for record in entry:
-            assert type(record["year"]) == int
-            assert type(record["flights"]["domestic"]) == int
-            assert len(record["airport"]) == 3
-            assert len(record["courier"]) == 2
+        assert type(entry["year"]) == int
+        assert type(entry["flights"]["domestic"]) == int
+        assert len(entry["airport"]) == 3
+        assert len(entry["courier"]) == 2
     print "... success!"
 
 if __name__ == "__main__":
