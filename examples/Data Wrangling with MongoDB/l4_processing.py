@@ -63,7 +63,49 @@ def process_file(filename, fields):
 
         for line in reader:
             # YOUR CODE HERE
-            pass
+
+            if ("(" in line['rdf-schema#label']):
+                index = line['rdf-schema#label'].index("(")
+                line['rdf-schema#label'] = line['rdf-schema#label'][:index-1]
+            
+            if (line['name'] == "NULL"):
+                line['name'] = line['rdf-schema#label']
+
+            if (line['synonym'] == "NULL"):
+                line['synonym'] = "NULL"
+            elif (line['synonym'][0:1] == "{"):
+                line['synonym'] = line['synonym'].replace("* ", "")
+                line['synonym'] = line['synonym'].replace("*", "")
+                line['synonym'] = line['synonym'][1:-1]
+                line['synonym'] = line['synonym'].split("|")
+            else:
+                line['synonym'] = [line['synonym']]
+
+
+            for key in process_fields:
+                if line[key][0:1] == " ":
+                    line[key][0:1] == ""
+
+                if line[key] == "NULL":
+                    line[key] = None
+
+            d = {
+                     "synonym": line['synonym'], 
+                        "name": line['name'], 
+                        "classification": {
+                            "kingdom": line['kingdom_label'], 
+                            "family": line['family_label'], 
+                            "order": line['order_label'], 
+                            "phylum": line['phylum_label'], 
+                            "genus": line['genus_label'], 
+                            "class": line['class_label']
+                        }, 
+                        "uri": line['URI'], 
+                        "label": line['rdf-schema#label'], 
+                        "description": line['rdf-schema#comment']
+                }
+            data.append(d)
+             
     return data
 
 
