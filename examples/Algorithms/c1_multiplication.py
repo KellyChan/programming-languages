@@ -34,3 +34,11 @@ def countdown(x):
     print y
 
 print countdown(50)
+
+
+def time(a):
+    # The number of steps it takes to execute naive(a, b)
+    # as a function of a
+    steps = 0
+    steps = 3 + 2.0 * a
+    return steps
