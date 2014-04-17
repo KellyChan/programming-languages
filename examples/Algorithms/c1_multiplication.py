@@ -20,6 +20,10 @@ def russian(a, b):
         x = x >> 1  # x / 2 | 17/10001 --> 8/1000
     return z
 
+def rec_russian(a, b):
+    if a == 0: return 0 
+    if a % 2 == 0: return 2 * rec_russian(a/2, b)
+    return b + 2*rec_russian((a-1)/2, b)
 
 import math
 
