@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block page-header %}
+
+    <h3>Product List</h3>
+
+{% endblock %}
+
+{% block page-content %}
+
+    {% for product in products %}
+
+        <div class="product-frame">
+
+            <div class="product-info">
+                <p id="product-id">{{ product.id }}</p>
+                <p id="product-title">{{ product.title }}</p> 
+                <p id="product-description">{{ product.description }}</p>
+                <p id="product-price">{{ product.price }}</p>
+                
+                <a href='{% url 'cart-add' product.id %}'><button type='submit' name='cart'>Add to Cart</button></a>
+            </div>
+
+            <div class="product-image"> 
+                <p id="product-image">{{ product.image_url }}</p>
+            </div>   
+
+        </div>  
+
+    {% endfor %}
+
+{% endblock %}

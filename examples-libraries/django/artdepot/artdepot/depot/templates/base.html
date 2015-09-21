@@ -1,0 +1,59 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ArtDepot</title>
+        <meta charset="UTF-8" />
+
+        <link rel ="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+        <link rel ="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+        <script src="{% static 'js/bootstrap.js' %}"></script>
+        <script src="{% static 'js/jquery.js' %}"></script>
+
+    </head>
+    <body>
+
+        <header class="site-header">
+
+            <nav>
+                <span><h1>ArtDepot</h1></span>
+                <span><a href='{% url 'index' %}'>Home</a></span>
+                <span><a href='#'>Feedback</a></span>
+                <span>
+
+                    {% if user.is_authenticated %}
+
+                        <div class='signout'>
+                            <p>Welcome, <a href='{% url 'user-dashboard' user.id %}'>{{ user.username }}</a></p>
+                            <a href='{% url 'signout' %}'><button>Signout</button></a>
+                        </div>
+
+                    {% else %}
+
+                        <form class='signin' action='{% url 'signin' %}' method='post'>{% csrf_token %}
+                            <input type='text' name='username' placeholder='username'>
+                            <input type='password' name='password' placeholder='password'>
+                            <button type='submit'>Signin</button>
+                        </form>
+
+                        <a href='{% url 'signup' %}'><button>Signup</button></a> 
+                        
+                    {% endif %}
+
+                </span>
+            </nav>
+
+        </header>
+
+        {% block page-header %}
+        {% endblock %}
+
+        {% block page-content %}
+        {% endblock %}
+
+        <footer class="site-footer">
+        </footer>
+ 
+    </body>
+</html>

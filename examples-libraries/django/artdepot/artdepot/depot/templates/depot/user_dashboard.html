@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block page-header %}
+
+    <h3>User: Dashboard</h3> 
+
+{% endblock %}
+
+{% block page-content %}
+
+    <h4>My Cart</h4>
+
+    <div class='cart-frame'>
+
+        <div class='cart-manager'>
+            <a href='{% url 'cart-clean' %}'><button>Clean the Cart</button></a>
+        </div>
+
+        <div class='cart-list'>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    
+                    {% for item in cart.items %}
+                        <tr>
+                            <th>{{ item.quantity }}</th>
+                            <th>{{ item.product.title }}</th>
+                            <th>{{ item.unit_price }}</th>
+
+                            <th><a href='#'><span>Remove</span></a></th> 
+                        </tr>
+                    {% endfor %}
+
+                    <tr>
+                        <th></th>
+                        <th>Total:</th>
+                        <th>{{ cart.total_price }}</th>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <div class='order-fill-frame'>
+        
+        <form class='order-fill'>
+            <p>Name: <input type='text' name='name'></p>
+            <p>Address: <input type='text' name='address'></p>
+            <p>Email: <input type='email' name='email'></p>
+
+            <a href='{% url 'order-create' %}'><button>Confirm the Order</button></a>
+        </form>
+    </div>
+
+
+
+    <h4>My Orders<h4>
+
+    <div class='my-orders'>
+
+        {% for order in orders %}
+
+            <p>{{ order.id }}</p>
+            <span>{{ order.name }} | {{ order.address }} | {{ order.email }}</span>
+            <span>
+                <p>{{ cart.items }}</p>
+                <p>{{ cart.total_price }}</p>
+            </span>
+
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+

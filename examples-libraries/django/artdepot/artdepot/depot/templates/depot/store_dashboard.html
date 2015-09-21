@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block page-header %}
+
+    <h3>Store: Dashboard</h3> 
+
+{% endblock %}
+
+{% block page-content %}
+
+    <h4>New Product</h4>
+
+    <form method='post'>{% csrf_token %}
+
+        <li>Title: <input type='text' name='title'></li>
+        <li>Description: <textarea name='description'></textarea></li>
+        <li>Price: <input type='number' name='price'></li>
+        <li>ImageURL: <input type='url' name='image_url'></li>
+        <li>Time Availabled: <input type='datetime-local' name='time_availabled'></li>
+        <button type='submit' name='add'>Save</button>
+
+    </form>
+
+
+    {% for product in products %}
+
+        <div class="product-frame">
+
+            <div class="product-image"> 
+                <p id="product-image">{{ product.image_url }}</p>
+            </div>   
+
+            <div class="product-info">
+                <p id="product-id">{{ product.id }}</p> 
+                <p id="product-title">{{ product.title }}</p> 
+                <p id="product-description">{{ product.description }}</p>
+                <p id="product-price">{{ product.price }}</p>
+            </div>
+
+            <div class="product-manager">
+                <a href='{% url 'product-update' product.id %}'><button type='submit'>Update</button></a>
+                <a href='{% url 'product-delete' product.id %}'><button type='submit'>Delete</button></a>
+            </div>
+
+        </div>  
+
+    {% endfor %}
+
+{% endblock %}
+

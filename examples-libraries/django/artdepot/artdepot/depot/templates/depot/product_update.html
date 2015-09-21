@@ -1,0 +1,14 @@
+
+<h4>Update Product: {{ product.id }}</h4>
+
+<form action='{% url 'product-update' product.id %}' method='post'>{% csrf_token %}
+
+    <li>Title: <input type='text' name='title' value={{ product.title }}></li>
+    <li>Description: <textarea name='description'>{{ product.description }}</textarea></li>
+    <li>Price: <input type='number' name='price' value={{ product.price }}></li>
+    <li>ImageURL: <input type='url' name='image_url' value={{ product.image_url }}></li>
+    <li>Time Availabled: <input type='datetime-local' name='time_availabled' value={{ product.time_availabled }}></li>
+    
+    <button type='submit' name='add'>Save</button>
+
+</form>
