@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content-header %}
+
+    <h3>Daily Mood</h3>
+
+{% endblock %}
+
+{% block content-main %}
+
+    {% for mood in moods %}
+        <li>
+            <span>{{ mood.date }}</span>
+            {% block mood-rating %}<span>{{ mood.rating }}</span>{% endblock %}
+            {% block mood-remark %}<span>{{ mood.remark }}</span>{% endblock %}
+            <span><a href="{% url 'edit' mood.id %}">Edit</a></span>
+            <span><a href="{% url 'delete' mood.id %}">Delete</a></span>
+        </li>
+    {% endfor %}
+
+    <a href="{% url 'add' %}">ADD</a>
+
+{% endblock %}

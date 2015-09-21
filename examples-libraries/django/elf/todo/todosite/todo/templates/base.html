@@ -1,0 +1,21 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}Todo{% endblock %}</title>
+        <meta charset="UTF-8" />
+
+        <link rel ="stylesheet" type="text/css" href="{% static 'todo/css/bootstrap.css' %}" />
+        <link rel ="stylesheet" type="text/css" href="{% static 'todo/css/style.css' %}" />
+        <script src="{% static 'todo/js/bootstrap.js' %}"></script>
+        <script src="{% static 'todo/js/jquery.js' %}"></script>
+
+    </head>
+    <body>
+        
+        {% block todo %}
+        {% endblock %} 
+ 
+    </body>
+</html>

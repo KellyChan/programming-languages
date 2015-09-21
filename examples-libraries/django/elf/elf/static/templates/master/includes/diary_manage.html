@@ -1,0 +1,32 @@
+{% if user.is_authenticated %}
+
+    <div class='diary-manager'>
+        <h3>Diary</h3>
+        
+        <form action="{% url 'master-diary-manage-add' user.username %}" method='POST'>{% csrf_token %}
+            {{ DiaryForm.as_p }}
+            <input type='submit' value='Save'>
+        </form>
+
+        {% for diary in diaries %}
+            <li>
+                <span>
+                    {{ diary.pubtime }} | 
+                    {{ diary.title }} |
+                    {{ diary.content }}
+                </span>
+                
+                <span><a href='{% url 'master-diary-manage-update' user.username diary.id %}'>Update</a></span>
+                <span><a href='{% url 'master-diary-manage-delete' user.username diary.id %}'>Delete</a></span>
+             
+            </li>
+            
+        {% endfor %}
+
+
+    </div>
+
+
+{% endif %}
+
+

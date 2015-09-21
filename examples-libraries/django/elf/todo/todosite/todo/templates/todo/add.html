@@ -1,0 +1,41 @@
+{% extends 'todo/todo.html'%}
+
+{% block title %} Edit ToDo {% endblock %}
+
+{% block todo %}
+
+    <form action="{% url 'add' %}" method="post">{% csrf_token %}
+
+        <div class="modal-body">
+
+            <textarea name="todo" class="txtodo" id="txtodo" required="required">{{ todo.todo }}</textarea>
+            <fieldset>
+                <label class="radio inline" for="priority"><span class="label label-success">Priority</span></label>
+
+                <label class="radio inline" for="priority">
+                    <input type="radio" name="priority" value="1" {% if todo.priority == '1' %} checked {% endif %}/>
+                    <span>1</span>
+                </label>
+
+                <label class="radio inline" for="priority">
+                    <input type="radio" name="priority" value="2" {% if todo.priority == '2' %} checked {% endif %}/>
+                    <span>2</span>
+                </label>
+
+                <label class="radio inline" for="priority">
+                    <input type="radio" name="priority" value="3" {% if todo.priority == '3' %} checked {% endif %}/>
+                    <span>3</span>
+                </label>
+            </fieldset>
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn"  data-dismiss="modal" aria-hidden="true">Discard</button>
+            <button id="send" class="btn btn-success" type="submit" name="submit" >Save</button>
+        </div>
+
+    </form>
+
+{% endblock %}
+
+

@@ -1,0 +1,33 @@
+{% if user.is_authenticated %}
+
+    <div class='event-manager'>
+        <h3>Event</h3>
+        
+        <form action="{% url 'master-event-manage-add' user.username %}" method='POST'>{% csrf_token %}
+            {{ EventForm.as_p }}
+            <input type='submit' value='Save'>
+        </form>
+
+        {% for event in events %}
+            <li>
+                <span>
+                    {{ event.date }} | {{ event.starttime }} | {{ event.endtime }} 
+                    {{ event.event }} | {{ event.location }} | {{ event.organization }} 
+                    {{ event.speakers }} | {{ event.rating }} | {{ event.feedback }} 
+                </span>
+            </li> 
+
+                <span><a href='{% url 'master-event-manage-update' user.username event.id %}'>Update</a></span>
+                <span><a href='{% url 'master-event-manage-delete' user.username event.id %}'>Delete</a></span>
+             
+            </li>
+            
+        {% endfor %}
+
+
+    </div>
+
+
+{% endif %}
+
+  

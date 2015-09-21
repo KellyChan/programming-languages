@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block content-header %}
+    
+    <h2>Dreams</h2>
+
+{% endblock %}
+
+{% block content-main %}
+
+    <button><a href="{% url 'add' %}">ADD</a></button>
+
+    {% for dream in dreams %}
+        <h3>{{ dream.title }}</h3>
+        <span>{{ dream.date }}</span>
+        <p>{{ dream.content }}</p>
+        <p>{{ dream.feedback }}</p>
+        
+        <span><a href="{% url 'edit' dream.id %}">Edit</a></span>
+        <span><a href="{% url 'delete' dream.id %}">Delete</a></span>
+    {% endfor %}
+
+{% endblock %} 

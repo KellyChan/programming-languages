@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block todo %}
+
+<div class="container">
+    <div class="row">
+        <div class="span8 offset2">
+            <div id="todo" class="well">
+
+
+
+    <table class="table table-hover">
+        
+        <thead>
+            <tr>
+                <td><h3 class="text-success">Todo List</h3></td>
+            </tr>
+        </thead>
+
+        <tbody>
+            
+            {% for todo in todolist %}
+                {% if todo.priority == 1 %}<tr class='danger'>{% endif %}
+                {% if todo.priority == 2 %}<tr class='info'>{% endif %}
+                {% if todo.priority == 3 %}<tr class='success'>{% endif %}
+
+                    <td class="todolist">{{ todo.todo }}</td>
+                
+                    <td class="te">
+                        <div class="span2">
+                            <a href="{% url 'edit' todo.id %}"><span class="label label-warning">Edit</span></a>                            
+                            <a href="{% url 'done' todo.id %}"><span class="label label-danger">Done</span></a>
+                            <a href="{% url 'delete' todo.id %}"><span class="label label-default">Delete</span></i></a>
+                        </div>
+                    </td>
+                </tr>
+
+            {% endfor %}
+
+            {% for todo in finishedlist %}
+                <tr class='default'>
+                    <td class="finishedlist">{{ todo.todo }}</td>
+
+                    <td class="te">
+                        <a href="{% url 'edit' todo.id %}"><span class="label label-success">Edit</span></a>                        
+                        <a href="{% url 'undo' todo.id %}"><span class="label label-success">Undo</span></a>
+                        <a href="{% url 'delete' todo.id %}"><span class="label label-default">Delete</span></i></a>                     
+                    </td>
+                    
+                </tr>
+            {% endfor %}
+
+        </tbody>
+
+
+    </table>
+
+    <a href="{% url 'add' %}" class="btn btn-success" role="button">NEW</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

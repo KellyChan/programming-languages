@@ -1,0 +1,6 @@
+<h3>Todo</h3>
+
+<form action='{% url 'master-diary-manage-update' user.username diary.id %}' method='POST'>{% csrf_token %}
+    {{ form.as_p }}
+    <input type='submit' value='Save'>
+</form>

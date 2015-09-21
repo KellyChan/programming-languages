@@ -1,0 +1,33 @@
+{% if user.is_authenticated %}
+
+    <div class='dream-manager'>
+        <h3>Dream</h3>
+        
+        <form action="{% url 'master-dream-manage-add' user.username %}" method='POST'>{% csrf_token %}
+            {{ DreamForm.as_p }}
+            <input type='submit' value='Save'>
+        </form>
+
+        {% for dream in dreams %}
+            <li>
+                <span>
+                    {{ dream.date }} | 
+                    {{ dream.title }} |
+                    {{ dream.content }} |
+                    {{ dream.feedback }}
+                </span>
+
+                <span><a href='{% url 'master-dream-manage-update' user.username dream.id %}'>Update</a></span>
+                <span><a href='{% url 'master-dream-manage-delete' user.username dream.id %}'>Delete</a></span>
+             
+            </li>
+            
+        {% endfor %}
+
+
+    </div>
+
+
+{% endif %}
+
+

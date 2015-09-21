@@ -1,0 +1,6 @@
+<h3>10K Hours</h3>
+
+<form action='{% url 'master-hours-manage-update' user.username tracker.id %}' method='POST'>{% csrf_token %}
+    {{ form.as_p }}
+    <input type='submit' value='Save'>
+</form>

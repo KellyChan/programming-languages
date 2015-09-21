@@ -1,0 +1,19 @@
+{% extends 'dreams/index.html'%}
+
+{% block content-main %}
+    
+    <form action="{% url 'edit' dream.id %}" method="post">{% csrf_token %}
+
+
+        <p>Title: <input type="text" name="title" value={{ dream.title }}></p>
+        <p>Date: {{ dream.date }}<p>
+        <p>Content: <input type="text" name="content" value={{ dream.content }}></p>
+        <p>Feedback: <input type="text" name="feedback" value={{ dream.feedback }}></p>
+
+        <button type="submit" value="Submit">Save</button>
+
+
+    </form>
+
+{% endblock %}
+

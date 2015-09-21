@@ -1,0 +1,32 @@
+{% if user.is_authenticated %}
+
+    <div class='mood-manager'>
+        <h3>Mood</h3>
+        
+        <form action="{% url 'master-mood-manage-add' user.username %}" method='POST'>{% csrf_token %}
+            {{ MoodForm.as_p }}
+            <input type='submit' value='Save'>
+        </form>
+
+        {% for mood in moods %}
+            <li>
+                <span>
+                    {{ mood.date }} | 
+                    {{ mood.rating }} |
+                    {{ mood.keywords }}
+                </span>
+                
+                <span><a href='{% url 'master-mood-manage-update' user.username mood.id %}'>Update</a></span>
+                <span><a href='{% url 'master-mood-manage-delete' user.username mood.id %}'>Delete</a></span>
+             
+            </li>
+            
+        {% endfor %}
+
+
+    </div>
+
+
+{% endif %}
+
+

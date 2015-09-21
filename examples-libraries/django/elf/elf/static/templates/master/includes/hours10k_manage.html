@@ -1,0 +1,36 @@
+{% if user.is_authenticated %}
+
+    <div class='hours10k-manager'>
+        <h3>10K Hours</h3>
+        
+        <form action="{% url 'master-hours-manage-add' user.username %}" method='POST'>{% csrf_token %}
+            {{ TrackerForm.as_p }}
+            <input type='submit' value='Save'>
+        </form>
+
+        {% for tracker in trackers %}
+            <li>
+                <span>
+                    {{ tracker.goal }} | 
+                    {{ tracker.date }} |
+                    {{ tracker.title }} |
+                    {{ tracker.content }} |
+                    {{ tracker.hours }} |
+                    {{ tracker.remark }}
+                </span>
+                
+                <span><a href='{% url 'master-hours-manage-update' user.username tracker.id %}'>Update</a></span>
+                <span><a href='{% url 'master-hours-manage-delete' user.username tracker.id %}'>Delete</a></span>
+             
+            </li>
+            
+        {% endfor %}
+
+
+    </div>
+
+
+{% endif %}
+
+
+

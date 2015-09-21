@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+
+{% block header %}
+
+    <div class="container">
+
+        <br/> 
+
+        <div class="navbar-header"> 
+            <a class="navbar-brand" href="#">ELF</a>
+        </div>
+        
+        <div class="navbar-collapse collapse">
+            <div class='navbar-right'>
+                Welcome, <strong>{{ user.username }}!  </strong>
+                <a href='{% url 'logout' %}'><button class="btn btn-xs btn-default" type='submit'>Logout</button></a>
+            </div>
+
+        </div><!--/.navbar-collapse -->
+
+        <br/>
+        <br/>
+
+        <nav>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a href='#'><h3 class="panel-title">Goals</h3></a>
+                    </div>
+                    <div class="panel-body">
+                        <a href='#'>Event</a>
+                        <a href='#'>Todo</a>
+                        <a href='#'>10K Hours</a>
+                    </div>
+                    </div><!-- end of panel -->
+            </div><!-- end of col-md-4 -->
+
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a href='#'><h3 class="panel-title">Life</h3></a>
+                    </div>
+                    <div class="panel-body">
+                        <a href='#'>Mood</a>
+                        <a href='#'>Dream</a>
+                        <a href='#'>Diary</a>
+                    </div>
+                    </div><!-- end of panel -->
+            </div><!-- end of col-md-4 -->
+
+
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a href='#'><h3 class="panel-title">Cashflow</h3></a>
+                    </div>
+                    <div class="panel-body">
+                        <a href='#'>Income</a>
+                        <a href='#'>Expense</a>
+                    </div>
+                    </div><!-- end of panel -->
+            </div><!-- end of col-md-4 -->
+
+        </nav>
+
+    </div><!-- end of container -->
+
+{% endblock %}
+
+
+{% block content %}
+
+    <!-- Goals -->
+    <div class="container">
+        <h2 class="page-header">Goals</h2> 
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Todo</h3>
+                </div>
+                <div class="panel-body">{% include 'master/includes/todo_manage.html' %}</div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Event</h3>
+                </div>
+                <div class="panel-body">{% include 'master/includes/event_manage.html' %}</div>
+            </div> 
+        </div><!-- end of col-md-4 -->  
+
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">10K Hours</h3>
+                </div>
+                <div class="panel-body">{% include 'master/includes/hours10k_manage.html' %}</div>
+            </div> 
+        </div>
+    </div>
+
+    
+
+    <!-- Life -->
+    <div class="container">
+        <h2 class="page-header">Life</h2> 
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Dream</h3>
+                </div>
+                <div class="panel-body">{% include 'master/includes/dream_manage.html' %}</div>
+            </div> 
+        </div><!-- end of col-md-4 -->
+        
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Mood</h3>
+                </div>
+                <div class="panel-body">{% include 'master/includes/mood_manage.html' %}</div>
+            </div> 
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Diary</h3>
+                </div>
+                <div class="panel-body">{% include 'master/includes/diary_manage.html' %}</div>
+            </div> 
+        </div><!-- end of col-md-8 -->
+    </div>
+
+    
+
+    <!-- Cashflow -->
+    <div class="container">
+        <h2 class="page-header">Cashflow</h2> 
+
+        <div class="col-md-4">{% block income %}{% endblock %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Income</h3>
+                </div>
+                <div class="panel-body">{\% include 'master/includes/income_manage.html' %}</div>
+            </div> 
+        </div><!-- end of col-md-4 -->
+
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Expense</h3>
+                </div>
+                <div class="panel-body">{\% include 'master/includes/expense_manage.html' %}</div>
+            </div>  
+        </div><!-- end of col-md-8 -->
+    </div>
+
+    <hr class="featurette-divider">
+
+{% endblock %}
+
+{% block footer %}
+
+    <div class="container">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2014 ELF Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </div>
+
+{% endblock %}

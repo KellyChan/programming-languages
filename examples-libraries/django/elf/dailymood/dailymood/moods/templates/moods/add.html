@@ -1,0 +1,40 @@
+{% extends 'moods/index.html' %}
+
+{% block content-main %}
+    
+    <form action="{% url 'add' %}" method="post">{% csrf_token %}
+
+        <p>Date: <input type="date" name="date" value="{{ mood.date }}"></p>
+
+        <p>Rating:   
+            <input type="radio" name="rating" value="1" {% if mood.rating == '1' %} checked {% endif %}/>
+            <span>1</span>
+            <input type="radio" name="rating" value="2" {% if mood.rating == '2' %} checked {% endif %}/>
+            <span>2</span>
+            <input type="radio" name="rating" value="3" {% if mood.rating == '3' %} checked {% endif %}/>
+            <span>3</span>
+            <input type="radio" name="rating" value="4" {% if mood.rating == '4' %} checked {% endif %}/>
+            <span>4</span>
+            <input type="radio" name="rating" value="5" {% if mood.rating == '5' %} checked {% endif %}/>
+            <span>5</span>
+            <input type="radio" name="rating" value="6" {% if mood.rating == '6' %} checked {% endif %}/>
+            <span>6</span>
+            <input type="radio" name="rating" value="7" {% if mood.rating == '7' %} checked {% endif %}/>
+            <span>7</span>
+            <input type="radio" name="rating" value="8" {% if mood.rating == '8' %} checked {% endif %}/>
+            <span>8</span>
+            <input type="radio" name="rating" value="9" {% if mood.rating == '9' %} checked {% endif %}/>
+            <span>9</span>
+        </p>
+
+        <p>Remark: <input type="text" name="remark" value={{ mood.remark }}></p>
+
+        <button type="submit" value="Submit">Save</button>
+
+
+    </form>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,6 @@
+<h3>Dream</h3>
+
+<form action='{% url 'master-dream-manage-update' user.username dream.id %}' method='POST'>{% csrf_token %}
+    {{ form.as_p }}
+    <input type='submit' value='Save'>
+</form>

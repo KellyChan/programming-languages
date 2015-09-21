@@ -1,0 +1,29 @@
+
+{% if user.is_authenticated %}
+
+
+    <div class='todo-manager'>
+        <h3>Todo</h3>
+
+        <form action='{% url 'todo-manage-add' user.username %}' method='POST'>{% csrf_token %}
+            {{ form.as_p }}
+            <input type='submit' value='Save'>
+        </form>
+
+        {% for todo in todos %}
+            <li>
+                <span>{{ todo.todo }} | {{ todo.priority }}</span>
+                <span><a href='{% url 'todo-manage-done' user.username todo.id %}'>Done</a></span>
+                <span><a href='{% url 'todo-manage-update' user.username todo.id %}'>Update</a></span>
+                <span><a href='{% url 'todo-manage-delete' user.username todo.id %}'>Delete</a></span>
+            </li>
+            
+        {% endfor %}
+
+
+    </div>
+
+
+{% endif %}
+
+

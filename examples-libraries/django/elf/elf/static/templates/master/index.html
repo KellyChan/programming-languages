@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+<!-- Header -->
+{% block header %}
+
+    <div class="container">
+
+        <br/> 
+
+        <div class="navbar-header"> 
+            <a class="navbar-brand" href="#">ELF</a>
+        </div>
+        
+        <div class="navbar-collapse collapse">
+            <form class="navbar-form navbar-right" role="form" action='{% url 'login' %}' method='POST'>{% csrf_token %} 
+                <div class="form-group"><input class="form-control" type='text' name='username' placeholder='username'> </div>
+                <div class="form-group"><input class="form-control" type='password' name='password' placeholder='password'></div>
+                <button class="btn btn-info" type='submit'>Sign In</button>
+            </form>
+        </div><!--/.navbar-collapse -->
+
+        <br/>
+        <br/>
+   
+    </div>
+
+{% endblock %}
+
+
+<!-- Content -->
+{% block content %}
+
+    <div class="container">  
+    <div class="row featurette">
+
+        <div class="col-md-8">
+            <div class="jumbotron">
+                <h1>Hello, world!</h1>
+                <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content.</p>
+                <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more »</a></p>
+            </div>
+        </div>
+
+        <div class="col-md-4">  
+            <!-- Sign Up-->
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+                    <h3 class="panel-title">Sign Up</h3>
+                </div>
+                <div class="panel-body">
+                    <form action='{% url 'signup' %}' method='POST'>{% csrf_token %}
+                        </br>
+                        <div class="form-group">
+                            <input class="form-control" type='text' name='username' placeholder='Username'>
+                            <input class="form-control" type='email' name='email' placeholder='Email'>
+                            <input class="form-control" type='password' name='password1' placeholder='Password'>
+                            <input class="form-control" type='password' name='password2' placeholder='Password (again)'>
+                        </div>
+                        <button class="btn btn-lg btn-info btn-block" type='submit'>Sign Up</button>
+                        <br/>
+                    </form>
+                </div>
+
+            </div><!-- end of panel -->
+        </div><!-- end of col-md-r -->
+
+    </div><!-- end of row featurette -->
+    <hr class="featurette-divider">
+    </div><!-- end of Container -->
+  
+
+{% endblock %}
+
+
+{% block footer %}
+
+    <div class="container">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2014 ELF Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </div>
+
+{% endblock %}
