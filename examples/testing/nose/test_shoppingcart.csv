@@ -1,0 +1,5 @@
+Test,Succcess/Failure,Details
+test_item (test_shoppingcart.ShoppingCartTest),Success
+test_length (test_shoppingcart.ShoppingCartTest),Success
+test_price (test_shoppingcart.ShoppingCartTest),Success
+test_total_with_sales_tax (test_shoppingcart.ShoppingCartTest),Success

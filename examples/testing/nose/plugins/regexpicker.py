@@ -1,3 +1,6 @@
+import sys
+err = sys.stderr
+
 import re
 
 import nose
@@ -29,7 +32,7 @@ class RegexPicker(Plugin):
                 err.write("Pattern for matching test methods is %s\n" % self.pattern)
 
     def wantMethod(self, method):
-        wanted = re.match(self.pattern, metho.func_name) is not None
+        wanted = re.match(self.pattern, method.func_name) is not None
         if self.verbose and wanted:
             err.write("nose will run %s\n" % method.func_name)
         return wanted
