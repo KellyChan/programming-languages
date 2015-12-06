@@ -1,3 +1,18 @@
+"""
+This is documentation for the this entire recipe.
+With it, we can demonstrate usage of the code.
+
+>>> cart = ShoppingCart().add("tuna sandwich", 15.0)
+>>> len(cart)
+1
+>>> cart.item(1)
+'tuna sandwich'
+>>> cart.price(1)
+15.0
+>>> print round(cart.total(9.25), 2) 
+16.39
+"""
+
 
 class ShoppingCart(object):
 
