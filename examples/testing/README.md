@@ -1,6 +1,10 @@
 Python Testing Cookbook
 ==================================
 
+unit     --> functional     --> system
+unittest --> BDD            --> Acceptance 
+nose     --> lettuce, mock  --> pycurracy
+
 ## unittest
 
 - unittest
@@ -15,3 +19,4 @@ Python Testing Cookbook
 ## nose
 
     $ nosetests xxx.py
+
