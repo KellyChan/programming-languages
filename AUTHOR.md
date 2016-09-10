@@ -1,2 +1,1 @@
-Kelly Chan <support@arttechresearch.com>
-
+K <kelly@alpesis.com>
