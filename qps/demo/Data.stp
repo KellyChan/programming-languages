@@ -1,0 +1,188 @@
+	
+!1:Code no,	
+!2:Code label
+!----------------------------------------------------------!
+
+
+[*data LS10(;)=
+1;	Business;
+2;	Personal]
+
+
+[*data DataQ12a(;)=
+1;	Make or receive phone calls;                                                 
+2;	GPS for maps and directions;
+3;	Create or change calendar appointments;
+4;	Synchronize or update e-mail/calendar/contacts using cable;
+5;	Synchronize or update e-mail/calendar/contacts over the air; 
+7;	Send or receive personal emails (e.g., Yahoo, Hotmail, Gmail, etc.);
+8;	Send or receive work emails;
+9;	Browse the Internet;
+10;	Send or receive SMS / Text Messages;
+11;	Read Word, Excel or PowerPoint documents;
+12;	Personalize your phone by changing or assigning ringtones]
+
+
+[*data DataQ12b(;)=
+1;	Play music / MP3;
+2;	Take photos;
+3;	Play pre-installed games;
+4;	Watch pre-recorded video, movies, or TV (downloaded directly or synched from your PC);
+5;	Watch live broadcasts;
+6;	Send Multi Media Messaging (MMS);
+7;	Receive automatic alerts/updates (e.g. news, sports, weather, stocks, etc .) through SMS or e-mail;
+8;	Search for information using the web (e.g. news, sports, weather, stocks, etc .)]
+
+
+[*data DataQ14(;)=
+1;	Is a brand I trust;
+2;	Reflects my personal style;
+3;	Helps me stand out in a crowd;
+4;	Makes my life easier;
+5;	Is innovative;
+6;	Is cool;
+7;	Is fun to use;
+8;	Is the best mobile phone;
+9;	Helps me be more productive;
+10;	Can be personalized to meet my needs;
+11;	Is easy to use when I started using it;
+12;	Is best for mobile internet browsing]
+
+
+[*data DataQ24(;)=
+1;	Takes and shows videos;
+2;	Helps me get more work done;
+3;	Does a lot more than just make phone calls;
+4;	Can make voice calls using the internet;
+5;	Helps me be more productive when mobile;
+6;	Has Wi-Fi capabilities;
+7;	Makes me feel secure that phone contents are backed up to a computer;
+8;	Has internet access or browsing capabilities;
+9;	Will impress my friends;
+10;	Allows me to work wherever I want;
+11;	Is new and different;
+12;	Makes me more accessible to family;
+13;	Helps me stand out in a crowd]
+
+
+[*data DataQ43(;)=
+1;	Set up work/corporate email;
+2;	Set up personal email;
+3;	Synchronize email with a PC or a server;
+4;	Synchronize contacts and calendar with a PC or a server;
+5;	Set up a data connection;
+6;	Transfer number, contacts, etc. from previous phone;
+7;	Install active sync;
+9;	Use the manual for help;
+10;	Call up Customer Service for help;
+11;	Get help on-line;
+12;	Set up Bluetooth headset;
+13;	Sync music and pictures with PC;
+14;	Personalize wall paper, ringtones, etc.]
+
+
+[*data DataQ44(;)=
+1;	Setting up work/corporate email;
+2;	Setting up personal email;
+3;	Synchronizing email with a PC or a server;
+4;	Synchronizing contacts and calendar with a PC or a server;
+5;	Setting up a data connection;
+6;	Transferring number, contacts, etc. from previous phone;
+7;	Installing active sync;
+9;	Using the manual for help;
+10;	Calling up Customer Service for help;
+11;	Getting help on-line;
+12;	Set up Bluetooth headset;
+13;	Sync music and pictures with PC;
+14;	Personalize wall paper, ringtones, etc.]
+
+
+
+
+
+[*data SmartPhone(;)=
+1;	Asustek P565;
+2;	Blackberry Bold;
+3;	BlackberryStorm;
+4;	HTC 6500;
+5;	HTC Fuze;
+6;	HTC Mogul;
+7;	HTC Touch;
+8;	HTC Touch Diamond;
+9;	HTC Touch Diamond;
+10;	HTC Touch HD;
+11;	HTC Touch Pro;
+12;	HTC TyTN II;
+13;	IPHONE 3G;
+14;	LG Incite;
+15;	Moto Q9c;
+16;	Nokia  N95; 
+17;	Nokia  N96;
+18;	Palm Treo 800W;
+19;	Palm Treo Pro;
+20;	Samsung Blackjack II;
+21;	Samsung Epix;
+22;	Samsung i200;
+23;	Samsung Omnia;
+24;	Samsung Saga;
+25;	Sony Ericsson Xperia X1;
+26;	Verizon XV 6800;
+27;	HP IPAQ 614]
+
+
+[*data KeyModel(;)=
+1;	Apple;
+2;	Asustek;
+3;	Blackberry;
+4;	HTC;
+5;	LG;
+6;	Motorola;
+7;	Nokia;
+8;	Palm;
+9;	Samsung;
+10;	Sony Ericsson;
+11;	Verizon;
+12;	Alcatel;
+13;	BenQ-Siemens;
+14;	Kyocera;
+15;	Neonode;
+16;	Orange;
+17;	Panasonic;
+18;	Philips;
+19;	Research in Motion (Blackberry);
+20;	Sagem;
+21;	Sanyo;
+22;	Sendo;
+23;	Sharp;
+24;	T-Mobile;
+25;	Tel.Me;
+26;	Toshiba;
+27;	Vodafone]
+
+
+[*data Provider(;)=
+1;	Alltel;
+2;	AT&T (Cingular);
+3;	Cellular One;
+4;	Cricket;
+5;	Dobson Cellular;
+6;	Helio;
+7;	Metro PCS;
+8;	Qwest;
+9;	Sprint (Nextel);
+10;	T-Mobile;
+11;	Tracfone;
+12;	US Cellular;
+13;	Verizon;
+14;	Virgin Mobile;
+31;	British Telecom;
+32;	Hutchison 3G;
+33;	O2 Telefonica;
+34;	Orange;
+35;	T-Mobile;
+36;	Vodafone;
+15;	Other;
+16;	Don’t know/Not sure]
+
+
+

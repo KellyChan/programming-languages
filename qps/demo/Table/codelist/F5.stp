@@ -1,0 +1,21 @@
+!F5
+dm $[tF5.a]=$[F5.a]/
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+r,
+
+x ="
+No internal or external IT support is available to end-users.  The mobile phone users or other people, without IT responsibilities, do all set-up and troubleshooting.<z>
+**Set-up, troubleshooting and end-user support are only provided by the mobile operator (such as Cingular, T-Mobile, or Vodafone).<z>
+**Set-up, troubleshooting and end-user support are provided by a third party, such as an outsourced IT service provider or value-added reseller.<z>
+**IT people provide help as needed based on their priorities, the problem and the person who needs help. However, there is no formalized internal IT support.   <z>
+**Formal internal IT support for set-up and troubleshooting, but end-user training, education and ongoing operation are not typically supported.<z>
+**Internal IT department controls and supports all aspects of deploying and using mobile phones, including configuration, applications that are allowed, and security policies.<z>
+**None of these <z>
+**MISSING<z>
+",

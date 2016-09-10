@@ -1,0 +1,31 @@
+!F2
+dm $[tF2.a]=$[F2.a]/
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+r,
+
+x ="
+1 to 4 employees<z>
+**5 to 9 employees<z>
+**10 to 24 employees<z>
+**25 to 49 employees<z>
+**50 to 99 employees<z>
+**100 to 249 employees<z>
+**250 to 499 employees<z>
+**500 to 999 employees<z>
+**1,000 to 4,999 employees<z>
+**5,000 to 24,999 employees<z>
+**25,000 or more employees<z>
+**Don’t know/prefer not to answer <z>
+**MISSING<z>
+",

@@ -1,0 +1,34 @@
+
+
+!----------------------------------------------------------!
+Data state
+
+
+Receive Data form CAWI
+
+	-> run [punch.stp]		-> If have Error need edit the data, punch in the column is best
+	
+	-> run [clean.stp]		-> Have Error?	feedback to PS
+
+
+!----------------------------------------------------------!
+Table state
+
+run [QPS Batch v3.0.xls	]
+	
+	[*insert data.stp]			-> All *data save in here, insert before define (May some define already need use *data)
+	[*insert define.stp]
+	[*insert recode.stp]			-> If need create variable/recode, do in here,
+
+	[*insert stub.stp]
+	[*insert stub-summary.stp]		-> For tab summary only
+	[*insert banner.stp]
+	[*insert base.stp]
+
+		[*insert weighting.stp]		-> If have (weighting not every job needed)	
+
+	[*insert t-report.stp]			-> tab table for insert separate program
+
+		[*insert manip.stp]		-> If have (manip not every job needed)
+
+!----------------------------------------------------------!

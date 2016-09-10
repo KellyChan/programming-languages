@@ -1,0 +1,60 @@
+[*data 999(;)=All respondents;
+Would NOT purchase next Smartphone;
+Usage of Communication capabilities/ activities on the phone - Making or Receiving phone calls;
+Usage of Communication capabilities/ activities on the phone - GPS for maps and directions;
+Usage of Communication capabilities/ activities on the phone - Create or change calendar appointments; 
+Usage of Communication capabilities/ activities on the phone - Synchronize or update e-mail/calendar/contacts using cable; 
+Usage of Communication capabilities/ activities on the phone - Synchronize or update e-mail/calendar/contacts over the air; 
+Code 6;
+Usage of Communication capabilities/ activities on the phone - Send or receive personal emails; 
+Usage of Communication capabilities/ activities on the phone - Send or receive work emails; 
+Usage of Communication capabilities/ activities on the phone - Browse the Internet;
+Usage of Communication capabilities/ activities on the phone - Send or receive SMS / Text Messages;
+Usage of Communication capabilities/ activities on the phone - Read Word, Excel or PowerPoint documents;
+Usage of Communication capabilities/ activities on the phone - Personalize your phone by changing or assigning ringtones;
+Usage of Media capabilities/ activities on the phone - Play music / MP3;
+Usage of Media capabilities/ activities on the phone - Take photos; 
+Usage of Media capabilities/ activities on the phone - Play pre-installed games; 
+Usage of Media capabilities/ activities on the phone - Watch pre-recorded video, movies, or TV;
+Usage of Media capabilities/ activities on the phone - Watch live broadcasts;
+Usage of Media capabilities/ activities on the phone - Send Multi Media Messaging (MMS);
+Usage of Media capabilities/ activities on the phone - Receive automatic alerts/updates through SMS or e-mail;
+Usage of Media capabilities/ activities on the phone - Search for information using the web;
+Aware of software brand installed in Smartphone;
+Who received as a personal gift;
+Who selected phone by one's own;
+Who selected phone by others;
+Who brougth phone by formal way;
+Set up smartphone;
+NOT the first Smartphone ever had;
+Who have a job;
+Windows Mobile Users;
+18 years of age or older;
+NOT White/African AmericanAsian]
+
+
+
+dm $b1=t,
+dm $b2=$Q2b/1..3,
+
+[*do i=1:12][*skip 6 on i .eq. 6]
+dm $b[2+i]=$Q12a_[i]/1..4,
+[*6]
+[*end i]
+
+[*do i=1:8]
+dm $b[14+i]=$Q12b_[i]/1..4,
+[*end i]
+
+dm $b23=$Q18/n9,
+dm $b24=$Q15a/5,
+dm $b25=$Q15a/1..3,
+dm $b26=$Q15a/4..6,
+dm $b27=$Q26a/1+5,
+dm $b28=[*do a=1:3]$Q43C[a]/nb[*sle]+[*end a],
+dm $b29=$Q62a/2,
+dm $b30=$F1/1..3,
+dm $b31=$S8/n2..3.n13.n16..17,
+dm $b32=$S2/1955..1991,
+dm $b33=$D6/4..6,
+

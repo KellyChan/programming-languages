@@ -1,0 +1,170 @@
+start control,
+*J81829 - WINDOWS MOBILE 6 PSAT QUESTIONNAIRE (2009 winter wave) - Segment
+
+!------------------------------------------------------------------------------------------------------------------------------!
+!***** Data *****!
+!----------------!
+
+c='..\RawData\81829Wave1final.asc',
+
+!------------------------------------------------------------------------------------------------------------------------------!
+!***** Output *****!
+!------------------!
+
+cep,
+!b,
+o=output\temp.tab,
+!o=output\test.tab,
+oldnames,
+csv2,
+finish control,
+
+start data,
+card characters binary 32000,
+serial number in columns 2-11,
+temporary /2000/,
+
+!------------------------------------------------------------------------------------------------------------------------------!
+!***** Data for Setting *****!
+!----------------------------!
+
+[*data 1999=J81829 - WINDOWS MOBILE 6 PSAT QUESTIONNAIRE (2009 winter wave)]
+
+[*data coutype=$Country/>0,$Country/1,$Country/2]
+!:::: Country 
+!Ctry	
+!:1 All countries
+!:2 UK
+!:3 US
+
+
+[*set cou= 1]
+
+!:::: Weighting :: 1=weighted, 2=unweighted
+[*set wttype=2]
+
+!:::: Format   :: 1=% only, 2=abs only, 3=abs+%
+[*set fno=3]
+
+!------------------------------------------------------------------------------------------------------------------------------!
+!***** Insert *****!
+!------------------!
+
+[*insert data.stp]
+[*insert define.stp]
+[*insert recode.stp]
+[*insert OE_UK.stp]
+[*insert OE_US.stp]
+
+[*insert Segment.stp]
+
+[*insert banner-segment.stp]
+[*insert base-segment.stp]
+[*insert stub-segment.stp]
+
+[*insert weighting.stp]
+
+!------------------------------------------------------------------------------------------------------------------------------!
+!***** Setting *****!
+!-------------------!
+
+finish data,
+
+start tables,
+
+F=NWFS,
+F=UPC/NPTC/NPGN/CAZ ' '/CZP' '/LBR0/UCH/RBL/LPP62/CLW6/CHG1/RLW25/BAL/PBL,
+F=DBL/SER/SDV/RHW25/IAT0/IBJ0/IAJ0/IBT12/SHG1/SIG2/PHG0,
+F=SLA101/SLB101/MCT1/NFSL,
+%PTR="TOTAL",
+%MED="MEDIAN",
+F=SPL600,
+F=UPC,
+F=DPS1/DPA1/PBL,
+
+%TCI="PAGE <&PAG><JR><J+>*TABLE <&TABLEIDENTIFICATION><JL><J+>",
+
+f=PGN,
+f=bts,
+
+%AVG="MEAN<d1>",
+%SDV="STANDARD DEVIATION<d1>",
+%SER="STANDARD ERROR<d1>",
+f=sla90/slb90,
+f=shg1,
+!f=sla101/slb101,
+
+%JH="[1999.1]<JC>*TIME - <&HH>:<&NN>    <JR>*DATE - <&MM>/<&DD>/<&YY><JR>",
+%JHT="[1999.1]<JC>*TABLE OF CONTENTS<JC>*TIME - <&HH>:<&NN>    <JR>*DATE - <&MM>/<&DD>/<&YY><JR>",
+
+GLOBAL BT # ="all respondents",
+%PTR="BASE",
+%UNR="UNWEIGHTED BASE",
+
+!------------------------------------------------------------------------------------------------------------------------------!
+!***** Print Set *****!
+!---------------------!
+
+ul ([coutype.[cou]]), goto finish,
+
+[*block 1 on fno.eq.1]
+!percent figure
+f=nprc/rtv/npcs,
+[*1]
+
+[*block 1 on fno.eq.2]
+!actual figure
+f=prc/nrtv/npcs,
+[*1]
+
+[*block 1 on fno.eq.3]
+!both actual figure and percent figure
+f=prc/rtv/npcs,
+[*1]
+
+!------------------------------------------------------------------------------------------------------------------------------!
+
+[*block 1 on cou.eq.2]
+[*set c=1,d=1]
+[*1]
+
+[*block 1 on cou.eq.3]
+[*set c=1,d=1]
+[*1]
+
+[*block 1 on cou.eq.1]
+[*set c=4,d=4]
+[*1]
+
+!------------------------------------------------------------------------------------------------------------------------------!
+!***** Weighting *****!
+!---------------------!
+
+[*block 1 on  wttype.eq.1]
+select wr $wt,
+[*1]
+
+[*block 1 on  wttype.eq.2]
+select wr 1,
+[*1]
+
+!------------------------------------------------------------------------------------------------------------------------------!
+!***** Main Table *****!
+!----------------------!
+
+[*do a=1:1]
+[*do b=1:1]
+[*do z=1:1]
+
+if $b[z]/nb, then,
+t #[a][&z][&b]=$t[a]*$h[b],
+bt ="[999.z]",
+endif,
+
+[*end z]
+[*end b]
+[*end a]
+
+!------------------------------------------------------------------------------------------------------------------------------!
+
+finish tables,

@@ -1,0 +1,19 @@
+!Q15a
+dm $[tQ15a.a]=$[Q15a.a]/
+1,
+2,
+3,
+4,
+5,
+6,
+r,
+
+x ="
+I selected it from all phones available in the market.<z>
+**I selected it from the ones available with my service provider. <z>
+**I selected it from my company’s approved list.<z>
+**My company issued me one.  I did not have a choice of models.<z>
+**I received it as a personal gift.<z>
+**Other (specify)<z>
+**MISSING<z>
+",

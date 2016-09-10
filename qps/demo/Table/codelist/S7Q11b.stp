@@ -1,0 +1,51 @@
+!S7Q11b
+dm $[tS7Q11b.a]=$[S7Q11b.a]/
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+31,
+32,
+33,
+34,
+35,
+36,
+15,
+16,
+r,
+
+x ="
+Alltel<g1b><z>
+**AT&T (Cingular)<z>
+** Cellular One<z>
+** Cricket<z>
+** Dobson Cellular<z>
+** Helio<z>
+** Metro PCS<z>
+** Qwest<z>
+**Sprint (Nextel)<z>
+**T-Mobile<z>
+** Tracfone<z>
+**US Cellular<z>
+**Verizon<z>
+** Virgin Mobile<z>
+**British Telecom<z>
+**Hutchison 3G <z>
+**O2 Telefonica <z>
+**Orange <z>
+**T-Mobile<z>
+**Vodafone<z>
+**Other (specify)<z>
+**Don’t know/Not sure<g1e><z>
+**MISSING<z>
+",

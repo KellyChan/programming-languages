@@ -1,0 +1,21 @@
+!Q29
+dm $[tQ29.a]=$[Q29.a]/
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+r,
+
+x ="
+Prepay for minutes<g1b><z>
+**1 year contract<z>
+**2 year contract<z>
+**Month to Month<z>
+**Other (specify)<z>
+**Don’t know<z>
+**I don’t have this type of plan <g1e><z>
+**MISSING<z>
+",

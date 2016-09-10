@@ -1,0 +1,142 @@
+!--------------------------------!
+!::: Show T2,M4,B3 of summary :::!
+!------------------------------------------------------------------------------------------------------------------!
+!::: Q13a
+
+[*data T2M4B3(;)=
+bz;	1..9;	Base;
+t2;	8..9;	Top 2;
+m4;	4..7;	Middle 4;
+b3;	1..3;	Bottom 3]
+
+
+[*do i=1:[T2M4B3.#]:3]
+dm $t28[T2M4B3.i]=f,
+	[*do a=1:[DataQ12a.#]:2]
+	$Q13a_[DataQ12a.a]/1..9,
+	$Q13a_[DataQ12a.a]/[T2M4B3.i+1],
+	[*end a]
+	
+x="Dummy<s>
+	[*do a=1:[DataQ12a.#]:2]
+	**(Q13a-[DataQ12a.a]) [DataQ12a.a+1] - Base<s><b>
+	**(Q13a-[DataQ12a.a]) [DataQ12a.a+1]
+	[*end a]
+",
+xt="(Q13a) Satisfaction of Communication capabilities/activities on phone - [T2M4B3.i+2] Summary Table",
+[*end i]
+
+!------------------------------------------------------------------------------------------------------------------!
+!::: Q13b
+
+[*data T2M4B3(;)=
+bz;	1..9;	Base;
+t2;	8..9;	Top 2;
+m4;	4..7;	Middle 4;
+b3;	1..3;	Bottom 3]
+
+
+[*do i=1:[T2M4B3.#]:3]
+dm $t29[T2M4B3.i]=f,
+	[*do a=1:[DataQ12b.#]:2]
+	$Q13b_[DataQ12b.a]/1..9,
+	$Q13b_[DataQ12b.a]/[T2M4B3.i+1],
+	[*end a]
+	
+x="Dummy<s>
+	[*do a=1:[DataQ12b.#]:2]
+	**(Q13b-[DataQ12b.a]) [DataQ12b.a+1] - Base<s><b>
+	**(Q13b-[DataQ12b.a]) [DataQ12b.a+1]
+	[*end a]
+",
+xt="(Q13b) Satisfaction of Media capabilities/ activities on the phone - [T2M4B3.i+2] Summary Table",
+[*end i]
+
+!------------------------------------------------------------------------------------------------------------------!
+!::: Q14
+
+[*data T2M4B3(;)=
+bz;	1..9;	Base;
+t2;	8..9;	Top 2;
+m4;	4..7;	Middle 4;
+b3;	1..3;	Bottom 3]
+
+
+[*do i=1:[T2M4B3.#]:3]
+dm $t35[T2M4B3.i]=f,
+	[*do a=1:[DataQ14.#]:2]
+	$Q14_[DataQ14.a]/1..9,
+	$Q14_[DataQ14.a]/[T2M4B3.i+1],
+	[*end a]
+	
+x="Dummy<s>
+	[*do a=1:[DataQ14.#]:2]
+	**(Q14-[DataQ14.a]) [DataQ14.a+1] - Base<s><b>
+	**(Q14-[DataQ14.a]) [DataQ14.a+1]
+	[*end a]
+",
+xt="(Q14) Satisfaction with Device Characteristics - [T2M4B3.i+2] Summary Table",
+[*end i]
+
+!------------------------------------------------------------------------------------------------------------------!
+!::: Q24a, Q24b
+
+!1:Queation	!2:Table no	!3:Table Label
+[*data T3M2B3Q(;)=
+Q24a;	40;	Importance of each characteristic in purchase decision;
+Q24b;	41;	Overall experience of each characteristic]
+
+!1:Set Table ID	!:2code range	!3:Label
+[*data T3M2B3(;)=
+bz;	1..7;	Base;
+top3;	5..7;	Top 3;
+mid2;	3..4;	Middle 2;
+bot3;	1..3;	Bottom 3]
+
+
+[*do h=1:[T3M2B3Q.#]:3]
+[*do i=1:[T3M2B3.#]:3]
+dm $t[T3M2B3Q.h+1][T3M2B3.i]=f,
+	[*do a=1:[DataQ24.#]:2]
+	$[T3M2B3Q.h]_[DataQ24.a]/1..7,
+	$[T3M2B3Q.h]_[DataQ24.a]/[T3M2B3.i+1],
+	[*end a]
+	
+x="Dummy<s>
+	[*do a=1:[DataQ24.#]:2]
+	**([T3M2B3Q.h]-[DataQ24.a]) [DataQ24.a+1] - Base<s><b>
+	**([T3M2B3Q.h]-[DataQ24.a]) [DataQ24.a+1]
+	[*end a]
+",
+xt="([T3M2B3Q.h]) [T3M2B3Q.h+2] - [T3M2B3.i+2] Summary Table",
+[*end i]
+[*end h]
+
+!------------------------------------------------------------------------------------------------------------------!
+!::: Q44
+
+[*data T3M2B3(;)=
+bz;	1..9;	Base;
+top3;	7..9;	Top 3;
+mid2;	5..6;	Middle 2;
+bot3;	1..3;	Bottom 3]
+
+
+[*do i=1:[T3M2B3.#]:3]
+dm $t53[T3M2B3.i]=f,
+	[*do a=1:[DataQ44.#]:2]
+	$Q44_[DataQ44.a]/1..9,
+	$Q44_[DataQ44.a]/[T3M2B3.i+1],
+	[*end a]
+	
+x="Dummy<s>
+	[*do a=1:[DataQ44.#]:2]
+	**(Q44-[DataQ44.a]) [DataQ44.a+1] - Base<s><b>
+	**(Q44-[DataQ44.a]) [DataQ44.a+1]
+	[*end a]
+",
+xt="(Q44) Satisfaction on aspects of initial set up - [T3M2B3.i+2] Summary Table",
+[*end i]
+
+!------------------------------------------------------------------------------------------------------------------!
+

@@ -1,0 +1,268 @@
+!=====================================================================================!
+!*********************** Banner Main *************************************************!
+!=====================================================================================!
+
+dm $h1=
+	t,
+
+	($S2/1985..1991), 
+	($S2/1975..1984), 
+	($S2/1965..1974), 
+	($S2/1955..1964), 
+	($S2/1900..1954),
+	
+	($S1/1),
+	($S1/2),
+	
+	($smartPhoneQuota/1000),          
+	($smartPhoneQuota/2..3+13+16..17),
+
+
+	
+	
+	($country/2).($S8/n2..3.n13.n16..17),
+	($country/2).(($S8/1+4..12+14+18..19+21..27)+(($S8/15+20).($Q40/1..2))),
+	($country/2).($S8/20).($Q40/3..5),
+	($country/2).($S8/15).($Q40/3..5),
+	($country/2).($S8/18),
+	($country/2).($S8/26+6),
+	($country/2).($S8/5+7..8+14+21..24),
+	($country/2).($S8/13),
+	($country/2).($S8/2+3),
+	($country/2).($S8/2),
+	($country/2).($S8/3),
+	
+	($country/1).($S8/n2..3.n13.n16..17),
+	($country/1).($S8/23),
+	($country/1).($S8/25),
+	($country/1).($S8/10+11),
+	($country/1).($S8/8),
+	($country/1).($S8/12),
+	($country/1).($S8/1+4+9+22+27),
+	($country/1).($S8/13),
+	($country/1).($S8/16+17),
+	($country/1).($S8/16),
+	($country/1).($S8/17),
+	
+	$S8/23,
+	$S8/5+10+11,
+	$S8/6+12+26,
+	
+
+        ($S8/21..24)+(($S8/20).($Q40/1..2)),
+        ($S8/4..12+26),
+
+	($country/2).( (($S8/21+23+14+6+7+8))  + (($S8/20).($Q40/1..2)) + (($S8/15).($Q40/1..2)) ),
+	($country/2).($S8/24+18+26+5),
+	($country/2).( (($S8/5+8+14+21))       + (($S8/20).($Q40/1..2)) ),
+	($country/2).( (($S8/18+6+7+23+26+24)) + (($S8/15).($Q40/1..2)) ),       
+	
+	($country/2).($S7/1),          
+	($country/2).($S7/2..8),       
+	($country/2).($S7/9),        
+	($country/2).($S7/10..11),     
+	($country/2).($S7/12),   
+	($country/2).($S7/13..14),   
+	
+	($country/1).($S7/31),  
+	($country/1).($S7/32),
+	($country/1).($S7/33),
+	($country/1).($S7/34),
+	($country/1).($S7/35),
+	($country/1).($S7/36),
+	
+	($Q1/3..4),  
+	($Q1/1..2),
+	($Q2a/3..4), 
+	($Q2a/1..2),
+	($Q3a/3..4), 
+	($Q3a/1..2),
+	
+	($S10_1/51..100),        
+	($S10_2/51..100),
+	
+	($F1/1..3),  
+	($F1/4..6),
+	($F2/1..2),  
+	($F2/3..4),   
+	($F2/5..6),   
+	($F2/7..11),
+	($F4/1),     
+	($F4/2),      
+	($F4/3),      
+	($F4/4),      
+	($F4/5..6),
+	
+	($D8/1..2),  
+	($D8/3..4),   
+	($D8/5..7), 
+	
+	($D8/31..33),   
+	($D8/34..36),  
+	($D8/37..39),
+	
+h ="Total***Total*(Z)<z>
+	
+	**Age***18-24 yrs*(A)<z>
+	**25-34 yrs*(B)<z>
+	**35-44 yrs*(C)<z>
+	**45-54 yrs*(D)<z>
+	**55 +*(E)<z>
+	
+	**Gender***Male*(A)<z>
+	**Female*(B)<z>
+	
+	**OS user***WM user*(A)<z>
+	**Non- WM user*(B)<z>	
+	
+	
+        **Brand and Model User***All Windows Mobile*(A)<z>
+        **Windows Mobile 6.1 only*(B)<z>
+        **(WM 6.0) Samsung Blackjack II*(C)<z>		
+        **(WM 6.0) Moto Q9c*(D)<z>					
+        **Palm Treo 800W*(E)<z>				
+        **XV 6800/ Mogul*(F)<z>				
+        **Other Windows Mobile *(G)<z>			
+        **iPhone 3G*(H)<z>					
+        **Total Blackberry (Bold + Storm)*(I)<z>		
+        **Blackberry Bold*(J)<z>				
+        **Blackberry Storm*(K)<z>
+        
+        **All Windows Mobile*(A)<z>			
+        **Samsung Omnia*(B)<z>				
+        **Sony Ericsson Xperia X1*(C)<z>			
+        **HTC Touch (HD/ PRO)*(D)<z>			
+        **HTC Touch Diamond*(E)<z>				
+        **HTC TyTN II*(F)<z>				
+        **Other Windows Mobile *(G)<z>			
+        **iPhone 3G*(H)<z>					
+        **Total Nokia (N95 + N96)*(I)<z>			
+        **Nokia N95*(J)<z>					
+        **Nokia N96*(K)<z>
+        
+        **Samsung Omnia (US + UK)*(V)<z>
+        **HTC Fuze + Touch Pro + Touch HD*(W)<z>
+        **HTC Mogul + TyTN II + XV 6800*(X)<z>        
+	
+	
+	**Brand User***All Samsung*(A)<z>
+	**All HTC*(B)<z>
+
+	**Supported network type***All 3G WM 6.1 (not confirmed)*(A)<z>
+	**All 2G/2.5G WM 6.1 (not confirmed)*(B)<z>
+	**All HSDPA WM6.1*(C)<z>
+	**All non-HSDPA WM6.1*(D)<z>
+
+	**US Operator***Alltel*(A)<z>
+	**AT&T*(B)<z>
+	**Sprint*(C)<z>
+	**T-Mobile*(D)<z>
+	**US Cellular*(E)<z>
+	**Verizon*(F)<z>
+	
+	**UK Operator***British Telecom*(A)<z>
+	**Hutchison 3G*(B)<z>
+	**O2 Telefonica*(C)<z>	
+	**Orange*(D)<z>
+	**T-Mobile*(E)<z>
+	**Vodafone*(F)<z>
+		
+	**Overall Satisfaction***Satisfied*(A)<z>
+	**Not Satisfied*(B)<z>
+	
+	**Continuation***Likely*(A)<z>	
+	**Not Likely*(B)<z>
+
+	**Recommendation***Likely*(A)<z>	
+	**Not Likely*(B)<z>
+	
+	**Brand and Model User***More business use*(A)<z>
+	**More personal use*(B)<z>
+	
+	**Employment***Employed*(A)<z>
+	**Not employed*(B)<z>
+	
+	**Company size***1 - 9 employees*(A)<z>
+	**10 - 49 employees*(B)<z>
+	**50 - 249 employees*(C)<z>
+	**250+*(D)<z>
+	
+	**Professional***IT Pro*(A)<z>
+	**Informal IT Pro*(B)<z>
+	**Dev*(C)<z>
+	**BDM*(D)<z>	
+	**IW*(E)<z>
+	
+	**Annual HH Income (US)***`<$34999*(A)<z>
+	**$35000 to $74999*(B)<z>
+	**`>$75000*(C)<z>
+	**Annual HH Income (UK)***`<£17499*(A)<z>	
+	**£17500 to £49999*(B)<z>
+	**`>£50000*(C)<z>
+	",
+ht $h1="Main",
+
+
+!-------------------------------------------------------------------------------------!
+
+dm $h4=
+        t,
+
+	$S8/23,
+	$S8/5+10+11,
+	$S8/6+12+26,
+
+h ="Total***Total*(Z)<z>
+
+        **Brand and Model User***Samsung Omnia (US + UK)*(A)<z>
+        **HTC Fuze + Touch Pro + Touch HD*(B)<z>
+        **HTC Mogul + TyTN II + XV 6800*(C)<z>
+        ",
+        
+ht $h4 ="Brand and Model User",        
+
+!=====================================================================================!
+!*********************** Banner for Summary ******************************************!
+!=====================================================================================!
+
+!----------------------------------------------------!
+!::: Q12a
+
+          dm $h2(11),
+
+          h ="[*do i=2:[DataQ12a.#]:2]
+                  [DataQ12a.i]([&[DataQ12a.i-1]])[*sle]**
+              [*end i]
+              ",
+   
+          ht $h2="Q12a",
+
+!-----------------------------------------------------!
+!::: Q12b
+
+          dm $h3(8),
+
+          h ="[*do i=2:[DataQ12b.#]:2]
+                  [DataQ12b.i]([&[DataQ12a.i-1]])[*sle]**
+              [*end i]",
+   
+          ht $h3="Q12b",
+
+!-----------------------------------------------------!
+!::: Q12a
+
+          dm $h5=f,f,f,f,f,
+
+          h ="Voice `+ Word *(A)
+              **Voice `+ Internet *(B)
+              **Voice `+ Internet `+ Word*(C)
+              **Voice `+ internet `+ Personal email *(D)
+              **Voice `+ Internet `+ Word `+ Personal email*(E)
+              ",              
+   
+          ht $h5="Q12a",
+          
+!-----------------------------------------------------!          
+
+  
+

@@ -1,0 +1,183 @@
+!=====================================================================================!
+!*********************** Banner Main *************************************************!
+!=====================================================================================!
+
+dm $h1=
+	!!t, change to ([coutype.[cou]]),	!!then the banner will only use the country in banner which choice in batch,
+
+	([coutype.[cou]]).($S2/1985..1991), 
+	([coutype.[cou]]).($S2/1975..1984), 
+	([coutype.[cou]]).($S2/1965..1974), 
+	([coutype.[cou]]).($S2/1955..1964), 
+	([coutype.[cou]]).($S2/1900..1954),
+	
+	([coutype.[cou]]).($S1/1),
+	([coutype.[cou]]).($S1/2),
+	
+	([coutype.[cou]]).($smartPhoneQuota/1000),          
+	([coutype.[cou]]).($smartPhoneQuota/2..3+13+16..17),
+	
+	([coutype.[cou]]).($S8/20..24),     
+	([coutype.[cou]]).($S8/4..12),      
+	([coutype.[cou]]).($S8/16..17),   
+	([coutype.[cou]]).($S8/16),         
+	([coutype.[cou]]).($S8/17),
+	([coutype.[cou]]).($S8/2..3),       
+	([coutype.[cou]]).($S8/2),          
+	([coutype.[cou]]).($S8/3),        
+	([coutype.[cou]]).($S8/13),
+	
+!!Example for Brand and Model User	
+	!!($S8/20..24), 	!!Didn't add ([coutype.[cou]]).	Then when run will use all country data
+	
+	
+	([coutype.[cou]]).($S7/1),          
+	([coutype.[cou]]).($S7/2..8),       
+	([coutype.[cou]]).($S7/9),        
+	([coutype.[cou]]).($S7/10..11),     
+	([coutype.[cou]]).($S7/12),   
+	([coutype.[cou]]).($S7/13..14),    
+	
+	([coutype.[cou]]).($S7/31),   
+	([coutype.[cou]]).($S7/32),
+	([coutype.[cou]]).($S7/33),
+	([coutype.[cou]]).($S7/34),
+	([coutype.[cou]]).($S7/35),
+	([coutype.[cou]]).($S7/36),
+	
+	([coutype.[cou]]).($Q1/3..4),  
+	([coutype.[cou]]).($Q1/1..2),
+	
+	([coutype.[cou]]).($Q2a/3..4), 
+	([coutype.[cou]]).($Q2a/1..2),
+	
+	([coutype.[cou]]).($Q3a/3..4), 
+	([coutype.[cou]]).($Q3a/1..2),
+	
+	([coutype.[cou]]).($S10_1/51..100),        
+	([coutype.[cou]]).($S10_2/51..100),
+	
+	([coutype.[cou]]).($F1/1..3),  
+	([coutype.[cou]]).($F1/4..6),
+	([coutype.[cou]]).($F2/1..2),  
+	([coutype.[cou]]).($F2/3..4),   
+	([coutype.[cou]]).($F2/5..6),   
+	([coutype.[cou]]).($F2/7..11),
+	
+	([coutype.[cou]]).($F4/1),     
+	([coutype.[cou]]).($F4/2),      
+	([coutype.[cou]]).($F4/3),      
+	([coutype.[cou]]).($F4/4),      
+	([coutype.[cou]]).($F4/5..6),
+	
+	([coutype.[cou]]).($D8/1..2),  
+	([coutype.[cou]]).($D8/3..4),   
+	([coutype.[cou]]).($D8/5..7), 
+	
+	([coutype.[cou]]).($D8/31..33),   
+	([coutype.[cou]]).($D8/34..36),  
+	([coutype.[cou]]).($D8/37..39),
+	
+h ="Total***Total*(Z)<z>
+	
+	**Age***18-24 yrs*(A)<z>
+	**25-34 yrs*(B)<z>
+	**35-44 yrs*(C)<z>
+	**45-54 yrs*(D)<z>
+	**55 +*(E)<z>
+	
+	**Gender***Male*(A)<z>
+	**Female*(B)<z>
+	
+	**OS user***WM user*(A)<z>
+	**Non- WM user*(B)<z>
+	
+	**Brand and Model User***Samsung User*(A)<z>
+	**HTC User*(B)<z>
+	**Nokia User (N95 + N96)*(C)<z>
+	**Nokia N95*(D)<z>
+	**Nokia N96*(E)<z>
+	**Blackberry (Bold + Storm)*(F)<z>
+	**Blackberry Bold*(G)<z>
+	**Blackberry Storm*(H)<z>
+	**iPhone 3G*(I)<z>
+	
+	**US Operator***Alltel*(A)<z>
+	**AT&T*(B)<z>
+	**Sprint*(C)<z>
+	**T-Mobile*(D)<z>
+	**US Cellular*(E)<z>
+	**Verizon*(F)<z>
+	
+	**UK Operator***British Telecom*(A)<z>
+	**Hutchison 3G*(B)<z>
+	**O2 Telefonica*(C)<z>	
+	**Orange*(D)<z>
+	**T-Mobile*(E)<z>
+	**Vodafone*(F)<z>
+		
+	**Overall Satisfaction***Satisfied*(A)<z>
+	**Not Satisfied*(B)<z>
+	
+	**Continuation***Likely*(A)<z>	
+	**Not Likely*(B)<z>
+
+	**Recommendation***Likely*(A)<z>	
+	**Not Likely*(B)<z>
+	
+	**Brand and Model User***More business use*(A)<z>
+	**More personal use*(B)<z>
+	
+	**Employment***Employed*(A)<z>
+	**Not employed*(B)<z>
+	
+	**Company size***1 - 9 employees*(A)<z>
+	**10 - 49 employees*(B)<z>
+	**50 - 249 employees*(C)<z>
+	**250+*(D)<z>
+	
+	**Professional***IT Pro*(A)<z>
+	**Informal IT Pro*(B)<z>
+	**Dev*(C)<z>
+	**BDM*(D)<z>	
+	**IW*(E)<z>
+	
+	**Annual HH Income (US)***`<$34999*(A)<z>
+	**$35000 to $74999*(B)<z>
+	**`>$75000*(C)<z>
+	**Annual HH Income (UK)***`<£17499*(A)<z>	
+	**£17500 to £49999*(B)<z>
+	**`>£50000*(C)<z>
+	
+",
+ht $h1="Main",
+
+!=====================================================================================!
+!*********************** Banner for Summary ******************************************!
+!=====================================================================================!
+
+!----------------------------------------------------!
+!::: Q12a
+
+          dm $h2(11),
+
+          h ="[*do i=2:[DataQ12a.#]:2]
+                  [DataQ12a.i]([&[DataQ12a.i-1]])[*sle]**
+              [*end i]
+              ",
+   
+          ht $h2="Q12a",
+
+!-----------------------------------------------------!
+!::: Q12b
+
+          dm $h3(8),
+
+          h ="[*do i=2:[DataQ12b.#]:2]
+                  [DataQ12b.i]([&[DataQ12a.i-1]])[*sle]**
+              [*end i]",
+   
+          ht $h3="Q12b",
+
+!-----------------------------------------------------!
+

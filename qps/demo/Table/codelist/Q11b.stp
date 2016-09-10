@@ -1,0 +1,63 @@
+!Q11b
+dm $[tQ11b.a]=$[Q11b.a]/
+1,
+1,
+2+3+4+5+6+7+8,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+9,
+10+11,
+10,
+11,
+12,
+12,
+13+14,
+13,
+14,
+31,
+32,
+33,
+34,
+35,
+36,
+15,
+16,
+r,
+
+x ="
+NET - NET - Alltel<g1b><u><z>
+**  Alltel<g1p><z>
+**NET - NET - AT&T (Cingular) <u><z>
+**   Cingular<g1p><z>
+**   Cellular One<g1p><z>
+**   Cricket<g1p><z>
+**   Dobson Cellular<g1p><z>
+**   Helio<g1p><z>
+**   Metro PCS<g1p><z>
+**   Qwest<g1p><z>
+**NET - NET - Sprint (Nextel) <u><z>
+**  Sprint (Nextel)<g1p><z>
+**NET - NET - T-Mobile <u><z>
+**  T-Mobile<g1p><z>
+**   Tracfone<g1p><z>
+**NET - NET - US Cellular <u><z>
+**  US Cellular<g1p><z>
+**NET - NET - Verizon <g1e><u><z>
+**  Verizon<g1p><z>
+**  Virgin Mobile<g1p><z>
+**NET - British Telecom<z>
+**NET - Hutchison 3G<z>
+**NET - O2 Telefonica <z>
+**NET - Orange <z>
+**NET - T-Mobile <z>
+**NET - Vodafone <z>
+**Other (specify)<z>
+**Don’t know/Not sure<z>
+**MISSING<z>
+",

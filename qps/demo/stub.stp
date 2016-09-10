@@ -1,0 +1,1195 @@
+!===== J81829 - stub.stp =====!
+
+!============================================================!
+!************************  Point ****************************!
+!============================================================!
+!----------------------!
+!***** Four Point *****!
+!----------------------!
+
+[*data PT4(;)=10;22r1;22r2;22r3;22r4;22r5;22r6;32]
+[*data PQ4(;)=Q1;Q11a;Q11a;Q11a;Q11a;Q11a;Q11a;Q20]
+
+[*data PL4(;)=
+Overall experience;
+Satisfaction on Mobile Operator - All Smartphone Users;
+Satisfaction on Mobile Operator - WM Users only;
+Satisfaction on Mobile Operator - WM 6.1 Users only;
+Satisfaction on Mobile Operator - iPhone Users only;
+Satisfaction on Mobile Operator - Blackberry Users only;
+Satisfaction on Mobile Operator - Nokia Users only;
+Satisfaction on software]
+
+!---------------------------------------------------------------------------------!
+!::: Q1, Q11a, Q20
+
+             [*do a=1:[PT4.#]]
+dm $t[PT4.a]=$[PQ4.a]/4,3,2,1,4,3..4,1..2,1,r,
+          x ="Very Satisfied (4)<v4>
+             **Somewhat Satisfied (3)<v3>
+             **Somewhat Dissatisfied (2)<v2>
+             **Very Dissatisfied (1)<v1>
+             **NET - Top Box
+             **NET - T2B
+             **NET - B2B
+             **NET - Bottom Box
+             **Missing Answers<z>
+             ",
+             xt ="([PQ4.a]) [PL4.a]",
+             [*end a]            
+
+!---------------------------------------------------------------------------------!
+
+!----------------------!
+!***** Five Point *****!
+!----------------------!
+
+[*data PT5(;)=12;13;23;34]
+[*data PQ5(;)=Q2a;Q3a;Q2b;Q20a]
+
+[*data PL5(;)=
+Likelihood to purchase another Smartphone of the same brand in the future;
+Likelihood to recommend the same Smartphone brand to a friend or colleague;
+Likelihood to purchase the next Smartphone from the same operator;
+likelihood to purchase another Smartphone with WM Software]
+
+!---------------------------------------------------------------------------------!
+!::: Q2a, Q3a, Q2b, Q20a
+
+             [*do a=1:[PT5.#]]
+dm $t[PT5.a]=$[PQ5.a]/5,4,3,2,1,5,4..5,1..2,1,r,
+          x ="Definitely would purchase again (5)<v5>
+             **Probably would purchase again (4)<v4>
+             **Might or might not purchase again (3)<v3>
+             **Probably would not purchase again (2)<v1>
+             **Definitely would not purchase again (1)<v1>
+             **NET - Top Box
+             **NET - T2B
+             **NET - B2B
+             **NET - Bottom Box
+             **Missing Answers<z>
+             ",
+             xt ="([PQ5.a]) [PL5.a]",
+             [*end a]
+        
+!---------------------------------------------------------------------------------!
+!::: Q3b
+
+dm $t25=$Q3b/5,4,3,2,1,5,4..5,1..2,1,r,
+     x ="Definitely Recommend (5)<v5>
+        **Probably would Recommend (4)<v4>
+        **Might or might not Recommend (3)<v3>
+        **Probably would not Recommend (2)<v1>
+        **Definitely would not Recommend (1)<v1>
+        **NET - Top Box
+        **NET - T2B
+        **NET - B2B
+        **NET - Bottom Box
+        **Missing Answers<z>
+        ",
+        xt ="(Q3b) Likelihood to recommend the same operator to a friend or colleague",
+
+!---------------------------------------------------------------------------------!
+
+!-----------------------!
+!***** Seven Point *****!
+!-----------------------!
+!---------------------------------------------------------------------------------!
+!::: Q24a, Q24b
+
+                        [*do b=1:2]
+                        [*do a=1:[DataQ24.#]-1:2]
+dm $t[39+b]r[DataQ24.a]=$Q24[&b]_[DataQ24.a]/7,6,5,4,3,2,1,5..7,6..7,1..3,r,
+                     x ="Very important 7 (7)<v7>
+                        **6 (6)<v6>
+                        **5 (5)<v5>
+                        **4 (4)<v4>
+                        **3 (3)<v3>
+                        **2 (2)<v2>
+                        **Not at all important 1 (1)<v1>
+                        **NET - T3B
+                        **NET - T2B
+                        **NET - B3B
+                        **Missing Answers<z>
+                        ",
+                       [*end a]
+                       [*end b]
+
+                    [*do a=1:[DataQ24.#]-1:2]
+xt $t40r[DataQ24.a]="(Q24a-[DataQ24.a]) Importance of each characteristic in purchase decision - [DataQ24.a+1]",
+xt $t41r[DataQ24.a]="(Q24b-[DataQ24.a]) Overall experience of each characteristic - [DataQ24.a+1]",
+                    [*end a]
+                       
+!---------------------------------------------------------------------------------!
+!----------------------!
+!***** Nine Point *****!
+!----------------------!
+!---------------------------------------------------------------------------------!
+!::: Q11
+
+dm $t21=$Q11/9,8,7,6,5,4,3,2,1,8..9,7..9,4..7,1..3,r,
+     x ="Completely Satisfied 9 (9)<v9>
+        **8 (8)<v8>
+        **7 (7)<v7>
+        **6 (6)<v6>
+        **5 (5)<v5>
+        **4 (4)<v4>
+        **3 (3)<v3>
+        **2 (2)<v1>
+        **Completely Dissatisfied 1 (1)<v1>
+        **NET - T2B
+        **NET - T3B
+        **NET - M4B
+        **NET - B3B
+        **Missing Answers<z>
+        ",        
+        xt ="(Q11) Satisfaction on speed of response",  
+
+!---------------------------------------------------------------------------------!
+!::: Q13a
+
+                     [*do a=1:[DataQ12a.#]-1:2]
+dm $t28r[DataQ12a.a]=$Q13a_[DataQ12a.a]/9,8,7,6,5,4,3,2,1,8..9,7..9,4..7,1..3,r,
+                  x ="Completely Satisfied 9 (9)<v9>
+                     **8 (8)<v8>
+                     **7 (7)<v7>
+                     **6 (6)<v6>
+                     **5 (5)<v5>
+                     **4 (4)<v4>
+                     **3 (3)<v3>
+                     **2 (2)<v2>
+                     **Completely Dissatisfied 1 (1)<v1>
+                     **NET - T2B
+                     **NET - T3B
+                     **NET - M4B
+                     **NET - B3B
+                     **Missing Answers<z>
+                     ",
+                     xt $t28r[DataQ12a.a]="(Q13a-[DataQ12a.a]) Satisfaction of Communication capabilities/ activities on the phone - [DataQ12a.a+1]",
+                     [*end a]
+                     
+!---------------------------------------------------------------------------------!
+!::: Q13b
+                     [*do a=1:[DataQ12b.#]-1:2]
+dm $t29r[DataQ12b.a]=$Q13b_[DataQ12b.a]/9,8,7,6,5,4,3,2,1,8..9,7..9,4..7,1..3,r,
+                  x ="Completely Satisfied 9 (9)<v9>
+                     **8 (8)<v8>
+                     **7 (7)<v7>
+                     **6 (6)<v6>
+                     **5 (5)<v5>
+                     **4 (4)<v4>
+                     **3 (3)<v3>
+                     **2 (2)<v2>
+                     **Completely Dissatisfied 1 (1)<v1>
+                     **NET - T2B
+                     **NET - T3B
+                     **NET - M4B
+                     **NET - B3B                    
+                     **Missing Answers<z>
+                     ",
+                     xt $t29r[DataQ12b.a]="(Q13b-[DataQ12b.a]) Satisfaction of Media capabilities/ activities on the phone - [DataQ12b.a+1]",
+                     [*end a]  
+                     
+!---------------------------------------------------------------------------------!
+!::: Q42
+
+dm $t49=$Q42/9,8,7,6,5,4,3,2,1,8..9,7..9,4..7,1..3,r,
+     x ="Completely Satisfied 9 (9)<v9>
+         **8 (8)<v8>
+         **7 (7)<v7>
+         **6 (6)<v6>
+         **5 (5)<v5>
+         **4 (4)<v4>
+         **3 (3)<v3>
+         **2 (2)<v2>
+         **Completely Dissatisfied 1 (1)<v1>
+         **NET - T2B
+         **NET - T3B
+         **NET - M4B
+         **NET - B3B           
+         **Missing Answers<z>
+         ",
+         xt ="(Q42) Overall satisfaction of initial setup experience",
+
+!---------------------------------------------------------------------------------!
+!::: Q44
+
+                     [*do a=1:[DataQ44.#]-1:2]
+dm $t53r[DataQ44.a]=$Q44_[DataQ44.a]/9,8,7,6,5,4,3,2,1,8..9,7..9,4..7,1..3,99,r,
+                  x ="Completely Satisfied 9 (9)<v9>
+                     **8 (8)<v8>
+                     **7 (7)<v7>
+                     **6 (6)<v6>
+                     **5 (5)<v5>
+                     **4 (4)<v4>
+                     **3 (3)<v3>
+                     **2 (2)<v2>
+                     **Completely Dissatisfied 1 (1)<v1>
+                     **NET - T2B
+                     **NET - T3B
+                     **NET - M4B
+                     **NET - B3B
+                     **Don't Know<z>
+                     **Missing Answers<z>
+                     ",
+                     xt $t53r[DataQ44.a]="(Q44-[DataQ44.a]) How satisfied with each of the following aspects related to the initial set up experience - [DataQ44.a+1]",
+                     [*end a]
+
+!---------------------------------------------------------------------------------!
+!::: Q14
+
+                     [*do a=1:[DataQ14.#]-1:2]
+dm $t35r[DataQ14.a]=$Q14_[DataQ14.a]/9,8,7,6,5,4,3,2,1,8..9,7..9,4..7,1..3,r,
+                  x ="Strongly Agree (9)<v9>
+                     **8 (8)<v8>
+                     **7 (7)<v7>
+                     **6 (6)<v6>
+                     **5 (5)<v5>
+                     **4 (4)<v4>
+                     **3 (3)<v3>
+                     **2 (2)<v2>
+                     **Strongly Disagree (1)<v1>
+                     **NET - T2B
+                     **NET - T3B
+                     **NET - M4B
+                     **NET - B3B 
+                     **Missing Answers<z>
+                     ",
+                     xt ="(Q14-[DataQ14.a]) Satisfaction with Device Characteristics - [DataQ14.a+1]",
+                     [*end a]
+                    
+!---------------------------------------------------------------------------------!
+!::: Q4-Q6 
+
+            [*do a=4:6]
+dm $t[10+a]=$Q[a]/9,8,7,6,5,4,3,2,1,8..9,7..9,4..7,1..3,r,
+         x ="Outstanding/Extraordinary 9 (9)<v9>
+            **8 (8)<v8>
+            **7 (7)<v7>
+            **6 (6)<v6>
+            **5 (5)<v5>
+            **4 (4)<v4>
+            **3 (3)<v3>
+            **2 (2)<v1>
+            **Unacceptable/Poor 1 (1)<v1>
+            **NET - T2B
+            **NET - T3B
+            **NET - M4B
+            **NET - B3B             
+            **Missing Answers<z>
+            ",
+            [*end a]
+            
+            xt $t14="(Q4) Overall product quality",   
+            xt $t15="(Q5) Overall value", 
+            xt $t16="(Q6) Overall battery life", 
+
+!---------------------------------------------------------------------------------!
+!::: Q7
+
+dm $t17=$Q7/9,8,7,6,5,4,3,2,1,8..9,7..9,4..7,1..3,r,
+     x ="Very Reliable 9 (9)<v9>
+        **8 (8)<v8>
+        **7 (7)<v7>
+        **6 (6)<v6>
+        **5 (5)<v5>
+        **4 (4)<v4>
+        **3 (3)<v3>
+        **2 (2)<v1>
+        **Not Reliable At All 1 (1)<v1>
+        **NET - T2B
+        **NET - T3B
+        **NET - M4B
+        **NET - B3B          
+        **Missing Answers<z>
+        ",        
+        xt ="(Q7) Overall reliability",   
+
+!---------------------------------------------------------------------------------!
+!::: Q8
+
+dm $t18=$Q8/9,8,7,6,5,4,3,2,1,8..9,7..9,4..7,1..3,r,
+     x ="Very Easy to Use 9 (9)<v9>
+        **8 (8)<v8>
+        **7 (7)<v7>
+        **6 (6)<v6>
+        **5 (5)<v5>
+        **4 (4)<v4>
+        **3 (3)<v3>
+        **2 (2)<v1>
+        **Not Easy to Use At All 1 (1)<v1>
+        **NET - T2B
+        **NET - T3B
+        **NET - M4B
+        **NET - B3B         
+        **Missing Answers<z>
+        ",        
+        xt ="(Q8) Ease of use",  
+
+!---------------------------------------------------------------------------------!
+!::: Q9
+
+dm $t19=$Q9/9,8,7,6,5,4,3,2,1,8..9,7..9,4..7,1..3,r,
+     x ="Very Easy to Learn to Use 9 (9)<v9>
+        **8 (8)<v8>
+        **7 (7)<v7>
+        **6 (6)<v6>
+        **5 (5)<v5>
+        **4 (4)<v4>
+        **3 (3)<v3>
+        **2 (2)<v1>
+        **Not Easy to Learn To Use At All 1 (1)<v1>
+        **NET - T2B
+        **NET - T3B
+        **NET - M4B
+        **NET - B3B         
+        **Missing Answers<z>
+        ",        
+        xt ="(Q9) Ease of learn to use",  
+
+!---------------------------------------------------------------------------------!
+!::: Q10
+
+dm $t20=$Q10/9,8,7,6,5,4,3,2,1,8..9,7..9,4..7,1..3,r,
+     x ="Very Secure 9 (9)<v9>
+        **8 (8)<v8>
+        **7 (7)<v7>
+        **6 (6)<v6>
+        **5 (5)<v5>
+        **4 (4)<v4>
+        **3 (3)<v3>
+        **2 (2)<v1>
+        **Not Secure At All 1 (1)<v1>
+        **NET - T2B
+        **NET - T3B
+        **NET - M4B
+        **NET - B3B         
+        **Missing Answers<z>
+        ",        
+        xt ="(Q10) Secureness of protecting the phone information",  
+
+!---------------------------------------------------------------------------------!
+
+!=================================================================!
+!************************  Code Frame ****************************!
+!=================================================================!
+!---------------------------------------------------------------------------------!
+!::: Country
+
+dm $t1=$COUNTRY/1-2,r,
+    x ="UK
+       **US
+       **Missing Answers<z>
+       ",
+       xt ="(COUNTRY)",
+       
+!---------------------------------------------------------------------------------!
+!::: S1
+
+dm $t2=$S1/1,2,r,
+    x ="Male
+       **Female
+       **Missing Answers<z>
+       ",
+       xt ="(S1) Gender",    
+
+!---------------------------------------------------------------------------------!
+!::: S3
+
+dm $t4=$S3/1-3,r,
+    x ="Basic mobile phone 
+       **Mobile phone with advanced features 
+       **Smart Phones
+       **Missing Answers<z>
+       ",
+       xt ="(S3) Phone type",    
+       
+!---------------------------------------------------------------------------------!
+!::: S6a
+
+
+[*do i=501:510]
+om $S6aBrandC1=$S6aBrandC1_[i],
+om $S6aC1=$S6aC1_[i],
+[*end i]
+
+[*do i=601:610]
+om $S6aBrandC2=$S6aBrandC2_[i],
+om $S6aC2=$S6aC2_[i],
+[*end i]
+
+dm $t6=
+$S6aBrandC1/1+2+3+4+5+6+7+8+9+10+11+12+13+14+15+16+17+18+19+20+21+22+23+24+25+26+27+28,
+$S6aBrandC1/1,
+$S6aBrandC1/2,
+$S6aBrandC1/3,
+$S6aBrandC1/4,
+$S6aBrandC1/5,
+$S6aBrandC1/6,
+$S6aBrandC1/7,
+$S6aBrandC1/8,
+$S6aBrandC1/9,
+$S6aBrandC1/10,
+$S6aBrandC1/11,
+$S6aBrandC1/12,
+$S6aBrandC1/13,
+$S6aBrandC1/14,
+$S6aBrandC1/15,
+$S6aBrandC1/16,
+$S6aBrandC1/17,
+$S6aBrandC1/18,
+$S6aBrandC1/19,
+$S6aBrandC1/20,
+$S6aBrandC1/21,
+$S6aBrandC1/22,
+$S6aBrandC1/23,
+$S6aBrandC1/24,
+$S6aBrandC1/25,
+$S6aBrandC1/26,
+$S6aBrandC1/27,
+$S6aBrandC1/28,
+$S6aBrandC2/1+2+3+4+5+6+7+8+9+10+11+12+13+14+15+16+17+18+19+20+21+22+23+24+25+26+27+28,
+$S6aBrandC2/1,
+$S6aBrandC2/2,
+$S6aBrandC2/3,
+$S6aBrandC2/4,
+$S6aBrandC2/5,
+$S6aBrandC2/6,
+$S6aBrandC2/7,
+$S6aBrandC2/8,
+$S6aBrandC2/9,
+$S6aBrandC2/10,
+$S6aBrandC2/11,
+$S6aBrandC2/12,
+$S6aBrandC2/13,
+$S6aBrandC2/14,
+$S6aBrandC2/15,
+$S6aBrandC2/16,
+$S6aBrandC2/17,
+$S6aBrandC2/18,
+$S6aBrandC2/19,
+$S6aBrandC2/20,
+$S6aBrandC2/21,
+$S6aBrandC2/22,
+$S6aBrandC2/23,
+$S6aBrandC2/24,
+$S6aBrandC2/25,
+$S6aBrandC2/26,
+$S6aBrandC2/27,
+$S6aBrandC2/28,
+$S6aC3/1+2+3+4+5+6+7+8+9+10+11+12+13+14+15+16+17+18+19+20+21+22+23+24+25+26+27+28+29+30+31+32+33+34+35+36+37+38+39,
+$S6aC3/1,
+$S6aC3/2,
+$S6aC3/3,
+$S6aC3/4,
+$S6aC3/5,
+$S6aC3/6,
+$S6aC3/7,
+$S6aC3/8,
+$S6aC3/9,
+$S6aC3/10,
+$S6aC3/11,
+$S6aC3/12,
+$S6aC3/13,
+$S6aC3/14,
+$S6aC3/15,
+$S6aC3/16,
+$S6aC3/17,
+$S6aC3/18,
+$S6aC3/19,
+$S6aC3/20,
+$S6aC3/21,
+$S6aC3/22,
+$S6aC3/23,
+$S6aC3/24,
+$S6aC3/25,
+$S6aC3/26,
+$S6aC3/27,
+$S6aC3/28,
+$S6aC3/29,
+$S6aC3/30,
+$S6aC3/31,
+$S6aC3/32,
+$S6aC3/33,
+$S6aC3/34,
+$S6aC3/35,
+$S6aC3/36,
+$S6aC3/37,
+$S6aC3/38,
+$S6aC3/39,
+$S6aC3/51+52+53+54+55,
+51,
+52,
+53,
+54,
+55,
+r,
+
+x ="
+NET - Basic Mobile Phone <g1b><u><z>
+**  Apple<g1p><z>
+**  Asustek<g1p><z>
+**  Blackberry<g1p><z>
+**  HTC<g1p><z>
+**  LG<g1p><z>
+**  Motorola<g1p><z>
+**  Nokia<g1p><z>
+**  Palm<g1p><z>
+**  Samsung<g1p><z>
+**  Sony Ericsson<g1p><z>
+**  Verizon<g1p><z>
+**  Alcatel<g1p><z>
+**  BenQ-Siemens<g1p><z>
+**  Kyocera<g1p><z>
+**  Neonode<g1p><z>
+**  Orange<g1p><z>
+**  Panasonic<g1p><z>
+**  Philips<g1p><z>
+**  Research in Motion (Blackberry)<g1p><z>
+**  Sagem<g1p><z>
+**  Sanyo<g1p><z>
+**  Sendo<g1p><z>
+**  Sharp<g1p><z>
+**  T-Mobile<g1p><z>
+**  Tel.Me<g1p><z>
+**  Toshiba<g1p><z>
+**  Vodafone<g1p><z>
+**  HP<g1p><z>
+**NET - Phones with advanced features<u><z>
+**  Apple<g1p><z>
+**  Asustek<g1p><z>
+**  Blackberry<g1p><z>
+**  HTC<g1p><z>
+**  LG<g1p><z>
+**  Motorola<g1p><z>
+**  Nokia<g1p><z>
+**  Palm<g1p><z>
+**  Samsung<g1p><z>
+**  Sony Ericsson<g1p><z>
+**  Verizon<g1p><z>
+**  Alcatel<g1p><z>
+**  BenQ-Siemens<g1p><z>
+**  Kyocera<g1p><z>
+**  Neonode<g1p><z>
+**  Orange<g1p><z>
+**  Panasonic<g1p><z>
+**  Philips<g1p><z>
+**  Research in Motion (Blackberry)<g1p><z>
+**  Sagem<g1p><z>
+**  Sanyo<g1p><z>
+**  Sendo<g1p><z>
+**  Sharp<g1p><z>
+**  T-Mobile<g1p><z>
+**  Tel.Me<g1p><z>
+**  Toshiba<g1p><z>
+**  Vodafone<g1p><z>
+**  HP<g1p><z>
+**NET - Smart Mobile Phone<u><z>
+**  Asustek P565 (including O2 XDA Zest)<g1p><z>
+**  Blackberry Bold<g1p><z>
+**  Blackberry Storm<g1p><z>
+**  HTC 6500<g1p><z>
+**  HTC Fuze<g1p><z>
+**  HTC Mogul<g1p><z>
+**  HTC Touch<g1p><z>
+**  HTC Touch Diamond<g1p><z>
+**  HTC Touch Diamond (including O2 XDA Ignito and T-Mobile MDA Compact IV)<g1p><z>
+**  HTC Touch HD<g1p><z>
+**  HTC Touch Pro (including O2 XDA Serra and T-Mobile MDA Vario IV)<g1p><z>
+**  HTC TyTN II<g1p><z>
+**  IPHONE 3G <g1p><z>
+**  LG Incite<g1p><z>
+**  Moto Q9c<g1p><z>
+**  Nokia  N95 <g1p><z>
+**  Nokia  N96<g1p><z>
+**  Palm Treo 800W<g1p><z>
+**  Palm Treo Pro<g1p><z>
+**  Samsung Blackjack II<g1p><z>
+**  Samsung Epix<g1p><z>
+**  Samsung SGH-i200<g1p><z>
+**  Samsung Omnia i908<g1p><z>
+**  Samsung Saga<g1p><z>
+**  Sony Ericsson Xperia X1<g1p><z>
+**  Verizon XV 6800<g1p><z>
+**  HP iPAQ 614<g1p><z>
+**  BlackBerry 7290<g1p><z>
+**  BlackBerry Pearl<g1p><z>
+**  BlackBerry Curve<g1p><z>
+**  BlackBerry 7100<g1p><z>
+**  T-Mobile MDA compact III<g1p><z>
+**  T-Mobile G1 Android phone<g1p><z>
+**  HTC Typhoon<g1p><z>
+**  HTC Wing<g1p><z>
+**  HTC Qtek 2020i<g1p><z>
+**  BlackBerry 8700<g1p><z>
+**  T-Mobile MDA Vario III<g1p><z>
+**  T-Mobile Sidekick<g1p><z>
+**NET - Others<u><z>
+**  Sagem MY 511X<g1p><z>
+**  Vodafone 625<g1p><z>
+**  Toshiba protege<g1p><z>
+**  Orange MOV600<g1p><z>
+**  Orange MPV600<g1p><z>
+**MISSING<z>
+",
+
+             xt ="(S6a) Phone brand, model name and number",
+
+
+!---------------------------------------------------------------------------------!
+
+[*data tBrand(;)=t6n1 ;t6n2]
+[*data QBrand(;)=S6aBrandC1;S6aBrandC2]
+
+             [*do a=1:[tBrand.#]]
+             [*insert .\codelist\Brand.stp]
+             [*end a]
+             
+xt $t6n1="(S6a-1) Brand name - Basic Mobile Phone",
+xt $t6n2="(S6a-2) Brand name - Phones with advanced features",
+
+!---------------------------------------------------------------------------------!
+
+[*data tModel(;)=t6m1      ;t6m2]
+[*data QModel(;)=S6aC1;S6aC2]
+
+             [*do a=1:[tModel.#]]
+             [*insert .\codelist\Model.stp]
+             [*end a]
+             
+xt $t6m1="(S6a-1) Model name - Basic Mobile Phone",
+xt $t6m2="(S6a-2) Model name - Phones with advanced features",
+
+
+[*set a1=%items($t6m1)]
+[*set a2=%items($t6m2)]
+
+if ($b46/nb).($t6m1/[a1]), l $iobs.$S6aC1,
+if ($b47/nb).($t6m2/[a2]), l $iobs.$S6aC2,
+
+!---------------------------------------------------------------------------------!
+
+[*data tModel(;)=t6m3]
+[*data QModel(;)=S6aC3]
+
+             [*do a=1:[tModel.#]]
+             [*insert .\codelist\Model.stp]
+             [*end a]
+             
+xt $t6m3="(S6a-3) Phone brand, model name and number - Smart Mobile Phone",
+
+
+!@@ t6 - S6a
+!---------------------------------------------------------------------------------!
+!::: S8
+
+[*data tS8=t7]
+[*data  S8=S8]
+
+             [*do a=1:[S8.#]]
+             [*insert .\codelist\S8.stp]
+             [*end a]
+             xt ="(S8) Most often used phone",
+       
+!---------------------------------------------------------------------------------!
+!::: Q1a
+
+[*data tQ1a=t11]
+[*data  Q1a=Q1a]
+
+             [*do a=1:[Q1a.#]]
+             [*insert .\codelist\Q1a.stp]
+             [*end a]
+             xt ="(Q1a) Comment on overall satisfaction",
+
+!@@ open end t11 - Q1a       
+!---------------------------------------------------------------------------------!
+!::: S7, Q11b
+
+[*data tS7Q11b=t8, t24]
+[*data  S7Q11b=S7, Q11b]
+
+             [*do a=1:[S7Q11b.#]]
+             [*insert .\codelist\S7Q11b.stp]
+             [*end a]
+             xt $t8="(S7) Most often used service provider",
+             xt $t24="(Q11b) Mobile operator most likely to consider for next Smartphone purchase",
+
+[*data tQ11b=t24n1]
+[*data  Q11b=Q11b]
+
+             [*do a=1:[Q11b.#]]
+             [*insert .\codelist\Q11b.stp]
+             [*end a]
+             xt $t24n1="(Q11b) NET - Mobile operator most likely to consider for next Smartphone purchase",
+
+!---------------------------------------------------------------------------------!
+!:::Q12a, Q12b
+
+[*data tQ12=t26r1,t26r2,t26r3,t26r4,t26r5,t26r7,t26r8,t26r9,t26r10,t26r11,t26r12,
+            t27r1,t27r2,t27r3,t27r4,t27r5,t27r6,t27r7,t27r8]
+[*data  Q12=Q12a_1,Q12a_2,Q12a_3,Q12a_4,Q12a_5,Q12a_7,Q12a_8,Q12a_9,Q12a_10,Q12a_11,Q12a_12,
+            Q12b_1,Q12b_2,Q12b_3,Q12b_4,Q12b_5,Q12b_6,Q12b_7,Q12b_8]
+
+             [*do a=1:[Q12.#]]
+             [*insert .\codelist\Q12.stp]
+             [*end a]
+             
+             
+                     [*do a=1:[DataQ12a.#]-1:2]
+xt $t26r[DataQ12a.a]="(Q12a-[DataQ12a.a]) Usage of Communication capabilities/ activities on the phone - [DataQ12a.a+1]",
+                     [*end a]
+
+                     [*do a=1:[DataQ12b.#]-1:2]
+xt $t27r[DataQ12b.a]="(Q12b-[DataQ12b.a]) Usage of Media capabilities/ activities on the phone - [DataQ12b.a+1]",
+                     [*end a]
+                     
+!---------------------------------------------------------------------------------!
+!:::Q12aNET,
+
+[*data tQ12NET=t67r1     ,t67r2     ,t67r3     ,t67r4     ,t67r5]
+[*data  Q12NET=RQ12aNet_1,RQ12aNet_2,RQ12aNet_3,RQ12aNet_4,RQ12aNet_5]
+
+             [*do a=1:[Q12NET.#]]
+             [*insert .\codelist\Q12NET.stp]
+             [*end a]
+                        
+
+xt $t67r1="(Q12a) Usage of Communication capabilities/ activities on the phone - Voice `+ Word",
+xt $t67r2="(Q12a) Usage of Communication capabilities/ activities on the phone - Voice `+ Internet",
+xt $t67r3="(Q12a) Usage of Communication capabilities/ activities on the phone - Voice `+ Internet `+ Word",
+xt $t67r4="(Q12a) Usage of Communication capabilities/ activities on the phone - Voice `+ Internet `+ Personal Email",
+xt $t67r5="(Q12a) Usage of Communication capabilities/ activities on the phone - Voice `+ Internet `+ Word `+ Personal Email",                     
+                     
+!---------------------------------------------------------------------------------!
+!::: Q18, Q22
+
+[*data tQ18Q22=t30,
+               t30m1,t30m2,t30m3,t30m4,
+               t33]
+[*data Q18Q22=Q18,Q18,Q18,Q18,Q18,Q22]
+
+             [*do a=1:[Q18Q22.#]]
+             [*insert .\codelist\Q18Q22.stp]
+             [*end a]
+             xt $t30="(Q18) Brand of software installed in Smartphone",
+             xt $t30m1="(Q18) WM user - Brand of software installed in Smartphone",
+             xt $t30m2="(Q18) Nokia user - Brand of software installed in Smartphone",
+             xt $t30m3="(Q18) Blackberry user - Brand of software installed in Smartphone",
+             xt $t30m4="(Q18) iPhone user - Brand of software installed in Smartphone",
+             xt $t33="(Q22) Preferred software on the next Smartphone",   
+             
+!---------------------------------------------------------------------------------!
+!::: Q19
+
+dm $t31=$Q19/1,2,3,r,
+     x ="Yes
+        **No
+        **Don’t Know
+        **Missing Answers<z>
+        ",
+        xt ="(Q19) First time software user",             
+
+!---------------------------------------------------------------------------------!
+!::: Q15a
+
+[*data tQ15a=t36]
+[*data Q15a=Q15a]
+
+             [*do a=1:[Q15a.#]]
+             [*insert .\codelist\Q15a.stp]
+             [*end a]
+             xt ="(Q15a) Selection process of the Smartphone",
+
+!---------------------------------------------------------------------------------!
+!::: Q15b
+
+[*data tQ15b=t37]
+[*data Q15b=Q15b]
+
+             [*do a=1:[Q15b.#]]
+             [*insert .\codelist\Q15b.stp]
+             [*end a]
+             xt ="(Q15b) Payment process of the Smartphone", 
+
+!---------------------------------------------------------------------------------!
+!::: Q16
+
+dm $t38=$Q16/1,2,r,
+     x ="I received it as a brand new phone
+        **I received it as a used phone
+        **Missing Answers<z>
+        ",
+        xt ="(Q16) Received New or Used phone",
+
+!---------------------------------------------------------------------------------!
+!::: Q17
+
+[*data tQ17(;)=t39r1;t39r2;t39r3]
+[*data  Q17(;)=Q17a;Q17b;Q17c]
+
+	[*do a=1:[Q17.#]]
+	[*insert .\codelist\Q17.stp]
+	[*end a]
+		
+         xt $t39r1="(Q17a) Most important phone selection reason",
+         xt $t39r2="(Q17b) 2nd most important phone selection reason",
+         xt $t39r3="(Q17c) 3rd most important phone selection reason",
+
+!---------------------------------------------------------------------------------!
+!::: Q26a
+
+[*data tQ26a=t42]
+[*data Q26a=Q26a]
+
+             [*do a=1:[Q26a.#]]
+             [*insert .\codelist\Q26a.stp]
+             [*end a]
+             xt ="(Q26a) Channel of phone purchase", 
+
+!---------------------------------------------------------------------------------!
+!::: Q29
+
+[*data tQ29=t44]
+[*data Q29=Q29]
+
+             [*do a=1:[Q29.#]]
+             [*insert .\codelist\Q29.stp]
+             [*end a]
+             xt ="(Q29) Service contract plan",
+
+!---------------------------------------------------------------------------------!
+!::: Q30
+
+[*data tQ30=t45]
+[*data Q30=Q30]
+
+             [*do a=1:[Q30.#]]
+             [*insert .\codelist\Q30.stp]
+             [*end a]
+             xt ="(Q30) Party who does the monthly bill payment",
+
+!---------------------------------------------------------------------------------!
+!::: Q32
+
+[*data tQ32=t47]
+[*data Q32=Q32]
+
+             [*do a=1:[Q32.#]]
+             [*insert .\codelist\Q32.stp]
+             [*end a]
+             xt ="(Q32) Current Data Plan",
+
+!---------------------------------------------------------------------------------!
+!::: Q40
+
+[*data tQ40=t48]
+[*data Q40=Q40]
+
+             [*do a=1:[Q40.#]]
+             [*insert .\codelist\Q40.stp]
+             [*end a]
+             xt ="(Q40) Current phone usage experience",
+
+!---------------------------------------------------------------------------------!
+!::: Q42b
+
+[*data tQ42b=t50]
+[*data Q42b=Q42b]
+
+             [*do a=1:[Q42b.#]]
+             [*insert .\codelist\Q42b.stp]
+             [*end a]
+             xt ="(Q42b) Functions could operate without help",
+
+!---------------------------------------------------------------------------------!
+!::: Q26b
+
+dm $t51=$Q26b/1,2,r,
+     x ="Yes
+        **No
+        **Missing Answers<z>
+        ",
+        xt ="(Q26b) Phone setup in store",
+
+!---------------------------------------------------------------------------------!
+!::: Q43
+
+[*data tQ43=t52r1,t52r2,t52r3,t52r4,t52r5 ,t52r6]
+[*data Q43= Q43C1,Q43C2,Q43C3,Q43C4,Q43CDK,Q43C_NET_Yes]
+
+             [*do a=1:[Q43.#]]
+             [*insert .\codelist\Q43.stp]
+             [*end a]
+
+             xt $t52r1="(Q43) Functions setup in store",                     
+             xt $t52r2="(Q43) Functions setup using quick start guide", 
+             xt $t52r3="(Q43) Functions setup using manual/ called customer service/ used online help", 
+             xt $t52r4="(Q43C4) When to set up mobil - No", 
+             xt $t52r5="(Q43CDK) When to set up mobil - DK", 
+             xt $t52r6="(Q43C-YES) NET-YES", 
+
+!---------------------------------------------------------------------------------!
+!::: Q62a                     
+
+dm $t54=$Q62a/1,2,r,
+     x ="Yes
+        **No
+        **Missing Answers<z>
+        ",
+        xt ="(Q62a) First Smartphone",
+
+!---------------------------------------------------------------------------------!
+!::: Q62b
+
+dm $t55=$Q62b/1,2,3,4,5,r,
+     x ="Within the past year
+        **1 year to less than 2 years ago
+        **2 years to less than 3 years ago
+        **3 years to less than 4 years ago
+        **4 years ago or longer
+        **Missing Answers<z>
+        ",
+        xt ="(Q62b) Smartphone usage experience",
+
+!---------------------------------------------------------------------------------!
+!::: Q34
+
+[*data tQ34=t56]
+[*data Q34=Q34]
+
+             [*do a=1:[Q34.#]]
+             [*insert .\codelist\Q34.stp]
+             [*end a]
+             xt ="(Q34) Previous most often used mobile type", 
+
+!-------------------------!
+!***** Firmographics *****!
+!-------------------------!
+!---------------------------------------------------------------------------------!
+!::: F1
+
+[*data tF1=t57]
+[*data F1=F1]
+
+             [*do a=1:[F1.#]]
+             [*insert .\codelist\F1.stp]
+             [*end a]
+             xt ="(F1) Employment status", 
+
+!---------------------------------------------------------------------------------!
+!::: F2
+
+[*data tF2=t58]
+[*data F2=F2]
+
+             [*do a=1:[F2.#]]
+             [*insert .\codelist\F2.stp]
+             [*end a]
+             xt ="(F2) Company employee size (all locations)", 
+
+!---------------------------------------------------------------------------------!
+!::: F4
+
+[*data tF4=t59]
+[*data F4=F4]
+
+             [*do a=1:[F4.#]]
+             [*insert .\codelist\F4.stp]
+             [*end a]
+             xt ="(F4) Primary role at work", 
+
+!---------------------------------------------------------------------------------!
+!::: F5
+
+[*data tF5=t60]
+[*data F5=F5]
+
+             [*do a=1:[F5.#]]
+             [*insert .\codelist\F5.stp]
+             [*end a]
+             xt ="(F5) Company IT support level for phones", 
+
+!------------------------!
+!***** Demographics *****!
+!------------------------!
+!---------------------------------------------------------------------------------!
+!::: D3
+
+dm $t61=$D3/1,2,3,r,
+     x ="Yes
+        **No
+        **Don’t know/prefer not to answer
+        **Missing Answers<z>
+        ",
+        xt ="(D3) Member of the Windows Mobile Total Access",
+
+!---------------------------------------------------------------------------------!
+!::: D4
+
+dm $t62=$D4/1,2,3,4,5,6,7,r,
+     x ="Single, never been married
+        **Single and living with a partner
+        **Married
+        **Divorced
+        **Widowed
+        **Separated
+        **Prefer not to answer
+        **Missing Answers<z>
+        ",
+        xt ="(D4) Marital status",
+
+!---------------------------------------------------------------------------------!
+!::: D5
+
+dm $t63=$D5/1,2,3,4,5,6,r,
+     x ="None
+        **1
+        **2
+        **3
+        **4 or more
+        **Prefer not to answer
+        **Missing Answers<z>
+        ",
+        xt ="(D5) Number of `<18 year old children",
+
+!---------------------------------------------------------------------------------!
+!::: D6
+
+dm $t64=$D6/1,2,3,4,5,6,r,
+     x ="White
+        **African American
+        **Asian
+        **Multi-racial
+        **or some other ethnic group
+        **Prefer not to answer
+        **Missing Answers<z>
+        ",
+        xt ="(D6) Ethnic group",
+
+!---------------------------------------------------------------------------------!
+!::: D7
+
+dm $t65=$D7/1,2,3,r,
+     x ="Yes
+        **No
+        **Prefer not to answer
+        **Missing Answers<z>
+        ",
+        xt ="(D7) Hispanic or Latino descent?",
+
+!---------------------------------------------------------------------------------!
+!::: D8
+
+[*data tD8=t66]
+[*data D8=D8]
+
+             [*do a=1:[D8.#]]
+             [*insert .\codelist\D8.stp]
+             [*end a]
+             xt ="(D8) Total annual HHI",
+
+!---------------------------------------------------------------------------------!
+
+!====================================================================!
+!************************  Numeric Range ****************************!
+!====================================================================!
+!---------------------------------------------------------------------------------!
+!::: S2
+
+dm $t3=$S2/1985..1991,1985-1991,1975..1984,1975-1984,1965..1974,1965-1974,1955..1964,1955-1964,<1955,1900-1954,r,    	
+    x ="NET - 18 - 24
+       [*do i=1985:1991]
+       **[i] ([2009-[i]])<v[2009-[i]]><z>
+       [*end i]
+       **NET - 25 - 34
+       [*do i=1975:1984]
+       **[i] ([2009-[i]])<v[2009-[i]]><z>
+       [*end i]       
+       **NET - 35 - 44
+       [*do i=1965:1974]
+       **[i] ([2009-[i]])<v[2009-[i]]><z>
+       [*end i]         
+       **NET - 45 - 54
+       [*do i=1955:1964]
+       **[i] ([2009-[i]])<v[2009-[i]]><z>
+       [*end i]        
+       **NET - 55+
+       [*do i=1900:1954]
+       **[i] ([2009-[i]])<v[2009-[i]]><z>
+       [*end i]       
+       **Missing<z>
+       ",
+       xt ="(S2) Age",
+             
+!---------------------------------------------------------------------------------!
+!::: S5
+
+
+di $i5=$s5_3,
+dm $t5=$S5_1/1..10,$S5_1/0-10,$S5_2/1..10,$S5_2/0-10,$S5_3/1..10,$S5_3/0-10,[*do i=1:3]$S5_[i]/1..10[*sle]+[*end i],r,
+    x ="NET - Basic Mobile Phone 
+        [*do i=0:10]
+        **[i] ([i])<v[i]><z>
+        [*end i]
+       **NET - Phones with advanced features
+        [*do i=0:10]
+        **[i] ([i])<v[i]><z>
+        [*end i]
+       **NET - Smart Mobile Phone
+        [*do i=0:10]
+        **[i] ([i])<v[i]><z>
+        [*end i]
+       **NET - Total 
+       **Missing<z>
+       ",
+       xt ="(S5) Number of phones",
+
+!@@ open end t5 - S5
+!---------------------------------------------------------------------------------!
+!::: S10
+
+dm $t9=
+	$S10_1/>50,
+	$S10_2/>50,
+	($S10_1/50).($S10_2/50),
+	r,
+	
+    x ="NET - Business Use (>50% Business Use) 
+       **NET - Personal Use (>50% Personal Use)
+       **NET - Both  (50% Personal Use and 50% Business Use)
+       **Missing<z>
+       ",
+       xt ="(S10) Phone usage",
+
+!---------------------------------------------------------------------------------!
+
+[*do i=1:[LS10.#]:2]
+dm $t9r[LS10.i]=$S10_[LS10.i]/0-100,r,
+    x ="0 (0)<v0>
+        [*do a=1:100]
+        **[a] ([a])<v[a]><z>
+        [*end a]
+       **Missing<z>
+       ",
+       xt ="(S10-[LS10.i]) Phone usage - [LS10.i+1]",
+[*end i]
+
+!---------------------------------------------------------------------------------!
+!::: Q27
+
+dm $t43=$Q27DK/9,
+x ="Don't Know",
+xt ="(Q27) Price of phone",
+
+!@@ open end t43 - Q27
+!---------------------------------------------------------------------------------!
+!::: Q31
+
+dm $t46=$Q31DK/9,
+x ="Don't Know",
+xt="(Q31) Average monthly mobile phone service charge",
+
+!@@ Numeric  t46 - Q31        
+!---------------------------------------------------------------------------------! 
+!----- End by t66 -----!

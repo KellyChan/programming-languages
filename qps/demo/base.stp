@@ -1,0 +1,125 @@
+[*data 999(;)=All respondents;
+Those who Might Not/ Would not purchase their next Smartphone from the same operator again;
+Usage of Communication capabilities/ activities on the phone - Making or Receiving phone calls;
+Usage of Communication capabilities/ activities on the phone - GPS for maps and directions;
+Usage of Communication capabilities/ activities on the phone - Create or change calendar appointments; 
+Usage of Communication capabilities/ activities on the phone - Synchronize or update e-mail/calendar/contacts using cable; 
+Usage of Communication capabilities/ activities on the phone - Synchronize or update e-mail/calendar/contacts over the air; 
+Dummy Q12a-6;
+Usage of Communication capabilities/ activities on the phone - Send or receive personal emails; 
+Usage of Communication capabilities/ activities on the phone - Send or receive work emails; 
+Usage of Communication capabilities/ activities on the phone - Browse the Internet;
+Usage of Communication capabilities/ activities on the phone - Send or receive SMS / Text Messages;
+Usage of Communication capabilities/ activities on the phone - Read Word, Excel or PowerPoint documents;
+Usage of Communication capabilities/ activities on the phone - Personalize your phone by changing or assigning ringtones;
+Usage of Media capabilities/ activities on the phone - Play music / MP3;
+Usage of Media capabilities/ activities on the phone - Take photos; 
+Usage of Media capabilities/ activities on the phone - Play pre-installed games; 
+Usage of Media capabilities/ activities on the phone - Watch pre-recorded video, movies, or TV;
+Usage of Media capabilities/ activities on the phone - Watch live broadcasts;
+Usage of Media capabilities/ activities on the phone - Send Multi Media Messaging (MMS);
+Usage of Media capabilities/ activities on the phone - Receive automatic alerts/updates through SMS or e-mail;
+Usage of Media capabilities/ activities on the phone - Search for information using the web;
+Those who are aware of the brand of software installed;
+Those who have received their Smartphone as a personal gift;
+Those who have selected their phone;
+Those who have NOT selected their phone;
+Those who have purchased their phone in a store;
+Those who have received help in setting up their Smartphone in store;
+Those who are NOT first time Smartphone users;
+Those who are employed;
+Those who are WM phone user;
+Dummy D7;
+Those who are NOT White, African American or Asian;
+Currency US`$;
+Currency UK`£;
+Dummy 36;
+Dummy 37;
+Dummy 38;
+Dummy 39;
+Dummy 40;
+Those who have received help in store;
+Those who are using their Smartphone installed with Windows Mobile;
+Those who are using Nokia Smartphone;
+Those who are using Blackberry;
+Those who are using iPhone;
+S5-1 `>0;
+S5-2 `>0;
+S5-3 `>0;
+S8 = Windows Mobile 6.0 and 6.1 user;
+S8 = Windows Mobile 6.1 users only;
+S8 = iPhone users only;
+S8 = Blackberry users only;
+S8 = Nokia users only;
+All Blackberry Users who answered DK or prefer Windows mobile;
+All Nokia Users who answered DK or prefer Windows mobile;
+All iPhone Users who answered DK or prefer Windows mobile;
+]
+
+
+
+ds $b1=t,
+ds $b2=$Q2b/1..3,
+
+[*do i=1:12][*skip 6 on i .eq. 6]
+ds $b[2+i]=$Q12a_[i]/1..4,
+[*6]
+[*end i]
+
+[*do i=1:8]
+ds $b[14+i]=$Q12b_[i]/1..4,
+[*end i]
+
+ds $b23=$Q18/n9,
+ds $b24=$Q15a/5,
+ds $b25=$Q15a/1..3,
+ds $b26=$Q15a/4..8,
+ds $b27=$Q26a/1+5,
+ds $b28=$Q43C3/nb,
+ds $b29=$Q62a/2,
+ds $b30=$F1/1..3,
+ds $b31=$S8/n2..3.n13.n16..17,
+ds $b32=$S2/<1992,
+ds $b33=$D6/4..6,
+ds $b34=$currency/1,
+ds $b35=$currency/2,
+
+ds $b41=$Q26b/1,
+ds $b42=$S8/n2.n3.n13.n16.n17,
+ds $b43=$S8/16+17,
+ds $b44=$S8/2+3,
+ds $b45=$S8/13,
+
+ds $b46=$S5_1/>0,
+ds $b47=$S5_2/>0,
+ds $b48=$S5_3/>0,
+
+!---------------------------------------!
+!:: update base on Mar 26, 2009
+
+ds $b49=($S8/n2..3.n13.n16..17),
+
+
+!---------------------------------------!
+!:: update base on Mar 30, 2009
+
+ds $b50=(($S8/1+4..12+14+18..19+21..27)+(($S8/15+20).($Q40/1..2))),
+ds $b51=$S8/13,
+ds $b52=($country/2).($S8/2..3),
+ds $b53=($country/1).($S8/16..17),
+
+!---------------------------------------!
+!:: update base on Apr. 15, 2009
+
+ds $b54=($country/2).(($S8/2..3).($Q22/1+9)),
+ds $b55=($country/1).(($S8/16..17).($Q22/1+9)),
+ds $b56=($S8/13).($Q22/1+9),
+
+
+
+
+
+
+
+
+

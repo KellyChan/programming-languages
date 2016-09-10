@@ -1,0 +1,17 @@
+!Q40
+dm $[tQ40.a]=$[Q40.a]/
+1,
+2,
+3,
+4,
+5,
+r,
+
+x ="
+Less than 3 months<z>
+**3 months to less than 6 months<z>
+**6 months to less than 12 months<z>
+**12 months to less than 18 months<z>
+**18 months or more<z>
+**MISSING<z>
+",

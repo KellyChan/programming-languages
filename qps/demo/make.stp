@@ -1,0 +1,45 @@
+
+
+
+!------------------------------------------------------------------------------!
+!### If S6aC1 & C2 answer smartphone brand, remove answer in S6aC1 & 2 to S6aC3
+
+
+om $S6aC1=[*do x=501:510]$S6aC1_[x][*sle].or.[*end x],
+om $S6aC2=[*do x=601:610]$S6aC2_[x][*sle].or.[*end x],
+
+!!if $iobs/37769, l 'Before'.$iobs.$S6aC1.$S6aC2.$S6aC3,
+
+[*do a=1:10]
+[*do j=1:2]
+[*do i=1:39]
+if ($S6aC[j]_[((j+4)*100)+a]/[i]), then,
+	!## S6aC[j] remove the brand, count S5_[j] +1,
+		di $S5_[j]=$S5_[j]-1,
+
+
+		m $S6aC[j]_[((j+4)*100)+a]/b,
+		m $S6aBrandC[j]_[((j+4)*100)+a]/b,	
+		
+
+	
+	!## S6aC3 added the brand, count S5_3 +1,
+	if $S6aC3/n[i], then,
+		di $S5_3=$S5_3+1,
+		m  $S6aC3/[i],
+	endif,	
+endif,
+[*end i]
+[*end j]
+[*end a]
+
+
+
+
+
+!!if $iobs/37769, l 'After'.$iobs.$S6aC1.$S6aC2.$S6aC3,
+!------------------------------------------------------------------------------!
+!### If after move S5_1 or 2 is 0, remove the code in S3,
+
+if ($S5_1/0).($S3/1), m $S3/n1,
+if ($S5_2/0).($S3/2), m $S3/n2,
