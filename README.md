@@ -7,6 +7,7 @@ The examples for various of programming languages including
 Generic
 -------------------------
 
+- [Java](./java)
 - [Python](./python)
 
 
