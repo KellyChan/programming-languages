@@ -1,0 +1,26 @@
+p {
+	font-family: Garamond, serif;
+}
+
+#intro {
+	font-weight: bold;
+	color: #000000;
+}
+
+div p {
+	color: #7AC5CD;
+}
+
+li p {
+	font-family: Verdana, sans-serif;
+	color: #000000;
+}
+
+.list_item {
+	font-family: Vivaldi, cursive;
+}
+
+#summary {
+	font-size: 20px;
+	color: #000000;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<title>Behold!</title>
+        <link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css'/>
+        <script type='text/javascript' src='script.js'></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	</head>
+	<body>
+        <div id="menu">
+            <h3>jQuery</h3>
+            <div>
+                <p>jQuery is a JavaScript library that makes your websites look absolutely stunning.</p>
+            </div>
+            <h3>jQuery UI</h3>
+            <div>
+                <p>jQuery UI includes even more jQuery goodness!</p>
+            </div>
+            <h3>JavaScript</h3>
+            <div>
+                <p>JavaScript is a programming language used in web browsers, and it's what powers jQuery and jQuery UI. You can learn about JavaScript in the <a href="http://www.codecademy.com/tracks/javascript" target="blank" style="text-decoration:none; color:#F39814">JavaScript track</a> here on Codecademy.</p>
+            </div>
+        </div>
+	</body>
+</html>

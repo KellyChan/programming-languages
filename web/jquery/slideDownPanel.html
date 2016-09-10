@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Slide Panel</title>
+        <script type="text/javascript" src="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
+    </head>
+    <body>
+        <div class="panel">
+        <br />
+        <br />
+        <p>Now you see me!</p>
+        </div>
+        <p class="slide"><div class="pull-me">Slide Up/Down</div></p>
+    </body>
+</html>

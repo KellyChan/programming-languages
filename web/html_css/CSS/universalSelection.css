@@ -1,0 +1,6 @@
+/*  * for all elements in html */
+
+
+*{
+    border: 1px dashed #0000FF;
+}

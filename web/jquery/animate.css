@@ -1,0 +1,7 @@
+div {
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    background-color: #FF0000;
+    position: relative;
+}

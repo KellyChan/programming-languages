@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<script>
+			var calculateCost = function()
+			{
+				var cost = prompt("How much does your project cost?");
+				var people = prompt("How many people are you?");
+				var costPerPerson = cost/people;
+				alert("As your project costs " + cost + " Euro and you are " + people + " people, everyone of you has to pay " + costPerPerson + " Euro." );
+			};
+		</script>
+	</head>
+	<body>
+		<button type="button" onclick="calculateCost()"> Start calculating costs! </button>
+	</body>
+</html>

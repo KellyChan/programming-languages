@@ -1,0 +1,29 @@
+* {
+	border: 1px dashed black;
+	margin-top: 20px;
+	margin-right: 50px;
+	margin-bottom: 10px;
+	margin-left: 5px;
+}
+
+div {
+	height: 50px;
+	width: 100px;
+	border: 2px solid black;
+	border-radius: 5px;
+	background-color: #308014;
+}
+
+
+/*
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+		<title>Result</title>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>
+*/
