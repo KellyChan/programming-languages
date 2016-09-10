@@ -1,0 +1,11 @@
+# Editors
+*.swp
+
+# Qt
+qtgame.pro.user
+
+# C++
+*.o
+
+# Build and Release
+qtgame/build/*
