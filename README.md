@@ -15,8 +15,10 @@ Software
 
 - [C++](./cpp)
 - [Java](./java)
+- [Scala](./scala)
 - [Python](./python)
 - [Ruby](./ruby)
+
 
 Web
 --------------------------
