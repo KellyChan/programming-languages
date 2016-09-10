@@ -1,6 +1,8 @@
-Python
+Programming Languages
 =====================================
 
-This repo is to store the examples and tutorials of Python libraries.
+The examples for various of programming languages including
 
+- Python
+- R
 
