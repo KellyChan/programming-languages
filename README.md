@@ -7,6 +7,9 @@ The examples for various of programming languages including
 Hardware
 -------------------------
 
+- [E](./e)
+
+
 Software
 -------------------------
 
