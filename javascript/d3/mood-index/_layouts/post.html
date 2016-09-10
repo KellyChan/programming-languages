@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<div class="post">
+
+    <header class="post-header">
+
+        <h1>{{ page.title }}</h1>
+
+        <p class="meta">
+            {{ page.date | date: "%b %-d, %Y" }} | 
+            {% for category in page.categories %} {{category}} {% endfor %}
+        </p>
+    
+    </header>
+
+
+    <article class="post-content"> {{ content }}
+    </article>
+
+    <span class="post-navigation">
+        <a {% if page.previous %} href="{{ site.url }}{{page.previous.url}}"{% endif %}
+           {% unless page.previous %}{% endunless %}>Previous</a>
+        <a {% if page.next %} href="{{ site.url }}{{ page.next.url }}"{% endif %}
+           {% unless page.next %}{% endunless %}>Next</a>
+    </span>
+
+</div>

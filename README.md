@@ -22,7 +22,7 @@ Web
 --------------------------
 
 - [PHP](./php)
-
+- [JavaScript](./javascript)
 
 Statistics
 --------------------------

@@ -1,0 +1,13 @@
+# Site settings
+title: Mood Index
+description: 
+
+baseurl: "http://kellychan.github.io/mood-index" 
+url: "http://kellychan.github.io/mood-index"
+
+author: Kelly Chan
+
+
+# Build settings
+markdown: kramdown
+permalink: pretty

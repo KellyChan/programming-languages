@@ -1,0 +1,13 @@
+define(function(){
+
+    function render(parameters){
+        var appDiv = document.getElementsById('app');
+        appDiv.innerHTML = '<input id="user-name" /><button id="add">Add this user</button>';
+    }
+
+    return {
+        render: render
+    }
+});
+
+
