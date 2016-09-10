@@ -1,0 +1,35 @@
+!: Project: Kelly Chan's Blog
+!:
+!: Author: Kelly Chan
+!: Date: Jan 08 2014
+!: Version: v1.0
+!
+!------------------------------------------------------------------------------!
+!: Modification Log
+!
+! [20140108] Post spec v1.0 created.
+!
+!------------------------------------------------------------------------------!
+! How To Post
+!-------------------!
+
+CATEGORIES
+[art]      - (yymmdd-Template_Name.html) -> (art.html)
+[tech]     - (yymmdd-Template_Name.html) -> (tech.html)
+[research] - (yymmdd-Template_Name.html) -> (research.html)
+[life]     - (yymmdd-Template_Name.html) -> (life.html)
+
+STEPS
+Step1. [art] -> create (yymmdd-Template_Name.html) -> update postContent (title/date/keywords/content)
+Step2. (art.html) -> update href/title
+
+
+***IMPORTANCE
+title name (fileName/title, href/title) -- KEEP THE SAME
+
+(yymmdd-Template_Name.html) <-->  (***.html)
+     fileName               <-->     href
+     title                  <-->     title
+
+
+

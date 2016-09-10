@@ -1,0 +1,145 @@
+@CHARSET "UTF-8";
+
+/*---------- background ---------------------------------------- */
+
+body {
+	background-color: #FFFFFF
+}
+
+.PAGE {
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 12px;
+	margin-bottom: 15px;
+	border: 0px solid #E6E6E6;
+}
+
+/*---------- blog title ---------------------------------------- */
+
+.blogName{
+	width: 100%;
+	padding-left: auto;
+	padding-right: auto;
+	padding-top: 30px;
+	padding-bottom: 0px;
+}
+
+#name{
+	margin-bottom: 1px;
+	text-align: center;
+	color: #B2B2B2;
+	font-size: 60px;
+	font-family: Arial, Helvetica, sans-serif;
+	
+}
+
+#description{
+	text-align: center;
+	color: #D1D1D1;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/*---------- category buttons ---------------------------------- */
+
+.blogCategory{
+	width: 100%;
+	margin-left: 150px;
+	margin-right: auto;
+	margin-top: 60px;
+	margin-bottom: 10px;
+	
+	font-size: 40px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#art{
+	width: 200px;
+	height: 50px;
+	margin-bottom: 10px;
+	background-color: #E6B800;
+	border-radius: 5px;
+	text-align: center;
+	display: inline-block;
+}
+
+#art a{
+	color: #FFEB99;
+	text-decoration: none;
+}
+
+#tech{
+	width: 200px;
+	height: 50px;
+	margin-bottom: 10px;
+	background-color: #8AB800;
+	border-radius: 5px;
+	text-align: center;	
+	display: inline-block;
+}
+
+#tech a{
+	color: #EAF2D2;
+	text-decoration: none;
+}
+
+#research{
+	width: 200px;
+	height: 50px;
+	margin-bottom: 10px;
+	background-color: #E64848;
+	border-radius: 5px;
+	text-align: center;	
+	display: inline-block;
+}
+
+#research a{
+	color: #F9D0D0;
+	text-decoration: none;
+}
+
+#gallery{
+	width: 200px;
+	height: 50px;
+	margin-bottom: 10px;
+	background-color: #F3F3F3;
+	border-radius: 5px;
+	text-align: center;	
+	display: inline-block;
+}
+
+#gallery a{
+	color: #F2F2F2;
+	text-decoration: none;
+}
+
+#slides{
+	width: 200px;
+	height: 50px;
+	margin-bottom: 10px;
+	background-color: #F3F3F3;
+	border-radius: 5px;
+	text-align: center;	
+	display: inline-block;
+}
+
+#slides a{
+	color: #F2F2F2;
+	text-decoration: none;
+}
+
+#life{
+	width: 200px;
+	height: 50px;
+	margin-bottom: 10px;
+	background-color: #B8B8E6;
+	border-radius: 5px;
+	text-align: center;	
+	display: inline-block;
+}
+
+#life a{
+	color: #E9E9F7;
+	text-decoration: none;
+}

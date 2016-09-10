@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<HTML>
+
+<HEAD>
+    <meta charset="UTF-8">
+    <title>KellyChan::Tech::How I Built This Blog</title>
+    <link rel='stylesheet' type='text/css' href='css/post.css'/>
+    <script type='text/javascript' src='javascript/post.js'></script>
+</HEAD>
+    
+    
+<BODY>
+<DIV CLASS="PAGE"> 
+
+    <!-- ------ -->
+    <!-- HEADER -->
+    <!-- ------ -->    
+    <div class="categoryName">
+            <h1 id="name"><a href='../tech.html'>KellyChan::</a>Tech</h1>
+            <p id="description">ArTechResearch in Tech</p>
+    </div>
+
+    <br/>
+
+    <!-- --------- -->
+    <!-- Post Content -->
+    <!-- Post Content to display single post -->
+    <!-- ----------------------------------- -->
+    <!-- Post Edit -->
+    <!-- 1. Adding postName / postAuthor / postDate / postKeywords         -->
+    <!-- 2. Adding postContent, all things including css/js in the content -->
+    <!-- ----------------------------------------------------------------- -->      
+    <div class="post">
+            <div id="postName"><h1>How I Built This Blog</h1></div>           
+            <div id="postAuthor"><p>Kelly Chan</p></div>           
+            <div id="postDate"><p>Jan 09 2014</p></div>
+            <br/>            
+            <div id="postKeywords">
+                    <p><b>Keywords:  </b>HTML, CSS, Github</p>
+            </div>
+            <br/>
+            <div id="postContent">
+            
+                    <p><b>Knowledge Required</b></p>
+                    <p>- HTML/CSS: to build the web pages</p>
+                    <p>- Github Pages: to host the website</p>
+                    <br/>
+                    <p><b>Process</b></p>
+                    <p>Requirements Analysis -> Paper Prototype -> Architecture -> Coding -> Testing -> Hosting -> Documentation</p>
+                    <br/>
+                    <p><b>1. Requirements Analysis</b></p>
+                    <p><b>Functions Analysis:</b></p>
+                    <p>---- categories with different pages</p>
+                    <p>---- specific category with a list to display all posts of that category</p>
+                    <p>---- specific post with a full page to display</p>
+                    <br/>
+                    <p><b>Structure Analysis:</b></p>
+                    <p>index.html (categories) -> (category).html (n category) -> (post).html (n posts)</p>
+                    <p>index.html</p>
+                    <p>|-------- art.html</p>
+                    <p>|-------- tech.html</p>
+                    <p>|-------- research.html</p>
+                    <p>|-------- (gallery).html</p>
+                    <p>|-------- (slides).html</p>
+                    <p>|-------- life.html</p>
+                    <br/>
+                    <p><b>2. Paper Prototype</b></p>
+                    <p>To draw the prototype on a paper</p>
+                    <img src='http://farm3.staticflickr.com/2821/11849122726_163f1d80ff_o.png' height='273' width='400'/>
+                    <br/>
+                    <br/>
+                    <p><b>3. Architecture</b></p>
+                    <p><b>Folder Structure</b></p>
+                    <img src='http://farm6.staticflickr.com/5518/11849458356_5cb94ddda3_o.png'>
+                    <br/>
+                    <p><b>HTML</b></p>
+                    <p>To create the HTML templates, define the header and content for each portion. Set up the class and id for each page.</p>
+                    <p>- index.html</p>
+                    <p>- categroy.html</p>
+                    <p>- yymmdd-Template_Name.html</p>
+                    <img src='http://farm8.staticflickr.com/7439/11848947153_32e013c1b0_o.png'>
+                    <img src='http://farm4.staticflickr.com/3760/11848947023_a9583bf326_o.png'>
+                    <br/>
+                    <p><b>CSS</b></p>
+                    <p>To define CSS values in HTML templates (index.hmtl / category.html / yymmdd-Template_Name.html).</p>
+                    <br/>
+                    <p><b>4. Coding & Tesing</b></p>
+                    <p>Referred to the above design, coding the template pages (index.html / category.html / yymmdd-Template_Name.html) first.</p> 
+                    <p>Once finished and fine tune, then copied the structure to other categories (art/tech/research/life), modified the text value.
+                    Fine tune again.</p>
+                    <br/>
+                    <p><b>5. Hosting</b></p>
+                    <p>Now, upload all files  to github repo, create a branch gh-pages, host the website on Github Pages.</p>
+                    <p>Then test the links to see if all is in order.</p>
+                    <br/>
+                    <p><b>6. Documentation</b></p>
+                    <p>Finally, create the documents to mark down the project structure for the further reference.</p>
+                    <p>Here, I wrote three documents: file_structure, css_specification, and how_to_post.</p>
+                    <br/>
+                    <p><b>Notes</b></p>
+                    <p>Time cost: 50% for coding and 50 % for testing and modification for the first released.</p>
+                    <p>In fact, testing part is time-consuimg but deserved, we can find many little problems and fix them time and time again.</p>
+                    <br/>
+                    <p>Source code is <a href='https://github.com/KellyChan/blog'>here</a>.</p>
+                    
+            </div>
+    </div>
+
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,77 @@
+!: Project: Kelly Chan's Blog
+!:
+!: Author: Kelly Chan
+!: Date: Jan 08 2014
+!: Version: v1.0
+!
+!------------------------------------------------------------------------------!
+!: Modification Log
+!
+! [20140108] Blog v1.0 created, based on HTML/CSS.
+!
+!------------------------------------------------------------------------------!
+! File Structure
+!-------------------!
+
+
+
+(index.html)
+    |
+    |-------- [css]
+    |           |-------- (index.css)
+    |           |-------- (art.css / tech.css / research.css / life.css)
+    |
+    |-------- [javascript]
+    |           |-------- (index.js)
+    |           |-------- (art.js / tech.js / research.js / life.js)  
+    |
+    |
+    |
+    |           
+    |-------- (art.html)
+    |              |-------- [art]
+    |                          |-------- [css]
+    |                                      |-------- (post.css)
+    |
+    |                          |-------- [javascript]
+    |                                      |-------- (post.js)    
+    |                          |-------- [template]
+    |                                      |-------- (template.html)  
+    |   
+    |-------- (tech.html)
+    |              |-------- [tech]
+    |                          |-------- [css]
+    |                                      |-------- (post.css)
+    |
+    |                          |-------- [javascript]
+    |                                      |-------- (post.js)    
+    |                          |-------- [template]
+    |                                      |-------- (template.html)
+    |   
+    |-------- (research.html)
+    |              |-------- [research]
+    |                          |-------- [css]
+    |                                      |-------- (post.css)
+    |
+    |                          |-------- [javascript]
+    |                                      |-------- (post.js)    
+    |                          |-------- [template]
+    |                                      |-------- (template.html)
+    |
+    |      
+    |******** (gallery.html)
+    |******** (slides.html)
+    |
+    |-------- (life.html)
+                   |-------- [life]
+                               |-------- [css]
+                                           |-------- (post.css)
+     
+                               |-------- [javascript]
+                                           |-------- (post.js)    
+                               |-------- [template]
+                                           |-------- (template.html) 
+   
+
+
+!------------------------------------------------------------------------------!

@@ -16,6 +16,7 @@ Software
 - [C++](./cpp)
 - [Java](./java)
 - [Python](./python)
+- [Ruby](./ruby)
 
 
 Statistics

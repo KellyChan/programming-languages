@@ -1,0 +1,60 @@
+!: Project: Kelly Chan's Blog
+!:
+!: Author: Kelly Chan
+!: Date: Jan 08 2014
+!: Version: v1.0
+!
+!------------------------------------------------------------------------------!
+!: Modification Log
+!
+! [20140108] CSS spec v1.0 created, based on HTML/CSS.
+!
+!------------------------------------------------------------------------------!
+! CSS Specification
+!-------------------!
+
+HTML STRUCTURE
+
+(index.html)
+     |
+     |-------- (art.html)
+     |-------- (tech.html)
+     |-------- (research.html)
+     |-------- (life.html)               
+
+
+!------------------------------------------------------------------------------!
+!: (CSS) index.html
+!: [] for class
+!: () for id
+
+
+[PAGE]
+  |-------- [blogName]
+  |              |-------- (name)
+  |              |-------- (description)
+  |
+  |-------- [blogCategory]
+                 |-------- (art)
+                 |-------- (tech)
+                 |-------- (research)
+                 |-------- (gallery)
+                 |-------- (slides)
+                 |-------- (life) 
+   
+
+!------------------------------------------------------------------------------!
+!: (CSS) art.html / tech.html / research.html / life.html
+!: [] for class
+!: () for id
+
+
+[PAGE]
+  |-------- [categoryName]
+  |              |-------- (name)
+  |              |-------- (description)
+  |
+  |-------- [categoryList]
+                 |-------- (post)
+
+
