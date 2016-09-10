@@ -4,9 +4,13 @@ Programming Languages
 The examples for various of programming languages including
 
 
-Generic
+Hardware
 -------------------------
 
+Software
+-------------------------
+
+- [C++](./cpp)
 - [Java](./java)
 - [Python](./python)
 
