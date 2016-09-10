@@ -13,6 +13,6 @@ Generic
 Statistics
 --------------------------
 
-- R
-- SAS
-- VBA
+- [R](./r)
+- [SAS](./sas)
+- [VBA](./vba)
