@@ -1,11 +1,4 @@
 #################
-## Python
-#################
-
-*.pyc
-*.pyo
-
-#################
 ## Eclipse
 #################
 
@@ -17,7 +10,6 @@ tmp/
 *.tmp
 *.bak
 *.swp
-*.swo
 *~.nib
 local.properties
 .classpath
@@ -148,6 +140,7 @@ csx
 AppPackages/
 
 # Others
+sql/
 *.Cache
 ClientBin/
 [Ss]tyle[Cc]op.*
