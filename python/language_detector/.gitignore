@@ -1,0 +1,10 @@
+# Python
+*.pyc
+
+# editor
+*.swp
+*.swn
+*.swo
+
+# OS
+.DS_Store
