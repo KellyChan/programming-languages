@@ -1,0 +1,2 @@
+run:
+	nvcc -I ../../common/inc/ -I ./ matrixMulCUBLAS.cpp -o matrixMulCUBLAS -lcublas
