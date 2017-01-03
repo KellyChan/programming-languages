@@ -1,0 +1,15 @@
+package ELMCONF;
+
+message ELM
+{
+    required float x = 1;
+
+    required float w1 = 2;
+    required float w2 = 3;
+
+    // message Params
+    // {
+    //    required float w1 = 1;
+    //    required float w2 = 2;
+    // }
+}

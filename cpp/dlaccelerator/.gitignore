@@ -1,0 +1,7 @@
+# editor
+*.swo
+*.swp
+*.swn
+
+# build
+accelerator/build/
