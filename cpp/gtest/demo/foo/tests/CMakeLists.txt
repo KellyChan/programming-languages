@@ -1,0 +1,1 @@
+FILE ( GLOB FOO_TEST_SOURCES . *.cpp)

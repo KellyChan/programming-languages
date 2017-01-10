@@ -1,0 +1,5 @@
+ADD_SUBDIRECTORY (foo)
+ADD_SUBDIRECTORY (lib)
+
+ADD_EXECUTABLE (main main.cpp)
+TARGET_LINK_LIBRARIES (main foo)
