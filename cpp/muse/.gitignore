@@ -1,0 +1,9 @@
+# python
+*.pyc
+
+# editors
+*.swp
+*.swo
+
+# 
+.venvs
