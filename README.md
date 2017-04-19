@@ -15,6 +15,7 @@ Software
 
 Programming Languages:
 
+- [C](./c)
 - [C++](./cpp)
 - [Java](./java)
 - [Scala](./scala)
@@ -25,7 +26,6 @@ Build Tools
 
 - [Makefile](./makefile)
 
--
 
 Web
 --------------------------
