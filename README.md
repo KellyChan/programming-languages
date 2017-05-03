@@ -17,6 +17,7 @@ Programming Languages:
 
 - [C](./c)
 - [C++](./cpp)
+- [Fortran](./fortran)
 - [Java](./java)
 - [Scala](./scala)
 - [Python](./python)
