@@ -1,8 +1,0 @@
-nose
-
-mock==1.0.1
-pinocchio
-mockito
-
-lettuce
-should-dsl
