@@ -1,0 +1,8 @@
+# python
+*.pyc
+
+# editor
+*.swp
+
+# vagrant
+.vagrant
