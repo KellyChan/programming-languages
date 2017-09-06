@@ -25,10 +25,23 @@ struct command commands[] =
 
 #define COMMAND(NAME) { #NAME, NAME ## _command }
 
+
+struct command commands_new[] = 
+{
+  COMMAND(quit),
+  COMMAND(help)
+};
+
+
 int main (void)
 {
   printf("%s\n", commands[0].name);
   commands[0].cmd();
 
-  COMMAND (quit); 
+  int i;
+  for (i = 0; i < 2; ++i)
+  {
+    printf("%s\n", commands_new[i].name);
+    commands_new[i].cmd();
+  }
 }
