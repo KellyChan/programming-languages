@@ -41,7 +41,6 @@ Statistics
 
 - [R](./r)
 - [SAS](./sas)
-- [QPS](./qps)
 - [VBA](./vba)
 
 
